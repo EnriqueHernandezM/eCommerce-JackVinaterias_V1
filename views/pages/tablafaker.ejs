@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body class="bg-dark text-white">
+    <%- include('../partials/navbar'); %>
+    <div class="container m-auto">
+      <div class="row">
+        <%stre.forEach((item)=>{ %>
+          <article class="mt-5 pt-5 d-flex align-items-center flex-row-reverse justify-content-around w-95 m-auto mb-5">
+            <p class="w-25 text-center fs-2"> <%=item.producto%><br /></p>
+            <p class="w-25 text-left fs-2">$: <%=item.precio%><br /></p>
+            <img class="w-25 p-5 align me-auto" src=" <%=item.imagen %>" /><br />
+            <p class="w-25 text-left fs-5">description%: <%=item.description%><br /></p>
+          </article>
+          <% }) %>
+    </div>
+    <%- include('../partials/footer'); %>
+  </body>
+</html>

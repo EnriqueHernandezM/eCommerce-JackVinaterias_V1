@@ -1,0 +1,17 @@
+@mixin adaptablePagina {
+  @media screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin adaptablePaginaTablet {
+  @media screen and (min-width: 576px) {
+    @content;
+  }
+}
+
+@mixin adaptablePaginaCel {
+  @media screen and (min-width: 360px) {
+    @content;
+  }
+}

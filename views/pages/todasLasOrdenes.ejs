@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body class="bg-dark text-white">
+    <%- include('../partials/navbar'); %>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-6 col-lg-12"></div>
+        <h1>tablero de pedidos y estatus</h1>
+      </div>
+      <div class="row">
+        <%allOrders.forEach((el) => { %>
+        <div id="contenedorForOrder" class="col-xs-12 col-md-6 col-lg-5 text-left">
+          <ul>
+            <li>
+              fecha de creacion
+              <p class="text-end"><%=el.creationDate%></p>
+            </li>
+            <li>
+              estatus
+              <p class="text-info text-end"><%=el.state%></p>
+            </li>
+            <li>
+              Id de Orden
+              <p class="text-end"><%=el._id%></p>
+            </li>
+            <li>
+              NumeroDeOrden
+              <p class="text-end"><%=el.numberOrder%></p>
+            </li>
+            <%el.order.forEach((elO) => { %>
+            <div class="border border-white p-4">
+              <li>
+                producto
+                <p class="text-end"><%=elO.product%></p>
+              </li>
+              <li>
+                codigo de item
+                <p class="text-end"><%=elO.codeItem%></p>
+              </li>
+              <li>
+                Precio por unidad $
+                <p class="text-end"><%=elO.price%></p>
+              </li>
+              <li>
+                cantidad
+                <p class="text-end"><%=elO.cantidad%></p>
+              </li>
+            </div>
+            <%})%>
+            <li>
+              Total de prodcutos
+              <p class="text-end"><%=el.totalProducts%></p>
+            </li>
+            <li>
+              Total a pagar
+              <p class="text-end"><%=el.totalOrder%></p>
+            </li>
+            <h5 class="border-bottom text-center border-white">Informacion del cliente</h5>
+            <li>
+              Email cliente
+              <p class="text-end"><%=el.customerData.email%></p>
+            </li>
+            <li>
+              Nombre cliente
+              <p class="text-end"><%=el.customerData.nombre%></p>
+            </li>
+            <li>
+              Direccion
+              <p class="text-end"><%=el.customerData.direccion%></p>
+            </li>
+            <li>
+              Telefono
+              <p class="text-end"><%=el.customerData.telefono%></p>
+            </li>
+            <li>
+              ID del carrito
+              <p class="text-end"><%=el.idTrolley%></p>
+            </li>
+            <li>
+              ID del Usuario
+              <p class="text-end"><%=el.idCustomer%></p>
+            </li>
+          </ul>
+        </div>
+        <%})%>
+      </div>
+    </div>
+    <%- include('../partials/footer'); %>
+  </body>
+</html>

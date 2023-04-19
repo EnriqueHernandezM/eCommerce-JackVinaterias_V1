@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body class="bg-dark text-white">
+    <%- include('../partials/navbar'); %>
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col text-white ms-5 text-center">
+          <% if(crearCuentamsg){ %>
+          <h1><%=crearCuentamsg%></h1>
+          <% } %> <% if (sessionE == "desp" ){ %>
+          <h1><%=mdg%></h1>
+          <% } if (sessionE == "fake" ){ %>
+          <h1><%=msg%></h1>
+          <% } if (sessionE == true ){ %>
+          <div class="container-fluid">
+            <div class="row vistaPerfil">
+              <div class="col-xs-12 col-md-6 col-lg-12 P-4 mt-2 mb-4 w-100">
+                <a class="fs-4 p-5 text-white text-decoration-none" href="/api/ordenes/allorders">Ver ordenes, solo como admin</a>
+                <a class="fs-4 p-5 text-white text-decoration-none" href="/api/ordenes/verMisCarritos">Ver mis Compras</a>
+              </div>
+              <div class="col-xs-12 col-md-6 col-lg-6 P-5 pt-5 ps-5 mt-5 text-center">
+                <h3>Hola Bienvenido <%=userE.nombre%></h3>
+              </div>
+              <div class="col-xs-12 col-md-6 col-lg-6 P-2 mt-1 text-center">
+                <img class="img-fluid" src="<%=userE.avatar%>" alt="imagen de perfil" />
+              </div>
+              <div class="col-xs-12 col-md-6 col-lg-12 P-4 mt-2 botonOut w-100">
+                <a href="/perfil/logout">cerrar session</a>
+              </div>
+              <div class="col-xs-12 col-md-6 col-lg-12 P-4 mt-4 text-center">
+                <h3>email: <%=userE.email%></h3>
+              </div>
+              <div class="col-xs-12 col-md-6 col-lg-12 P-4 mt-2 text-center">
+                <h3>edad: <%=userE.edad%></h3>
+              </div>
+              <div class="col-xs-12 col-md-6 col-lg-12 P-4 mt-2 mb-5 text-center">
+                <h3>direccion: <%=userE.direccion%></h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-md-6 col-lg-12 P-5 mt-1 mb-5 text-center">
+                <h4 class="fs-1">Tu carrito de compras</h4>
+                <div id="contenidoCarrito"></div>
+              </div>
+              <% if(carritoE){ %><%carritoE.forEach((el) => {%>
+              <div class="col-xs-12 col-md-6 col-lg-3 mt-1 text-center">
+                <img class="img-fluid w-25" src="<%=el.image%>" alt="imagen de un producto en carrioto" />
+              </div>
+              <div class="col-xs-12 col-md-6 col-lg-2 mt-5 text-center">
+                <p><%=el.product%></p>
+              </div> 
+              <div class="col-xs-12 col-md-6 col-lg-2 mt-5 text-center">
+                <p>piezas <%=el.cantidad%></p>
+              </div>  
+               <div class="col-xs-12 col-md-6 col-lg-2 mt-5 text-center">
+                <p>$: <%=el.price%></p>
+              </div>
+              <div class="col-xs-12 col-md-6 col-lg-2 mt-5 text-center">
+                <span onclick="deleteItemTrolley('<%=el._id|| el.id%>')">borrar 🗑️ </span>
+              </div>
+              <%})%>
+
+              <div class="col-xs-12 col-md-6 col-lg-4 mt-5 totalCarrito">
+                <ul>
+                  <li><p>Total $: <%=total%></p></li>
+                  <li><a href="/api/confirmarcompra">pagar</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <% } %> <% } if(sessionE == false){ %>
+          <h1>Hola al parecer aun no estas en el sistema</h1>
+          <% }if(sessionE != true) { %>
+        </div>
+      </div>
+      <div class="row p-5 titleLogin">
+        <div class="col text-white text-left">
+          <h1>LOGIN</h1>
+        </div>
+      </div>
+      <div class="row butomCrearCuenta">
+        <div class="col-xs-12 col-md-6 col-lg-12 text-center">
+          <a class="" href="/perfil/crearCuenta">Registrarme</a>
+        </div>
+      </div>
+      <form action="/perfil/login" method="post" class="row p-5">
+        <div class="col-xs-12 col-md-6 col-lg-4">
+          <p class="text-white P-2">Correo de Usuario</p>
+          <input type="email" name="email" placeholder="Ingresa el correo de tu cuenta" class="w-75" required="true" />
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-4">
+          <p class="text-white P-2">ingresa tu contraseña</p>
+          <input type="password" name="password" class="w-100" required="true" placeholder="contraseña" />
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-12 P-4 mt-5 text-center">
+          <button onclick="submit">iniciar secion</button>
+        </div>
+      </form>
+    <% } %><%- include('../partials/footer'); %>
+  </body>
+  <!--  <script type="text/javascript">
+    function actualizar() {
+      location.reload(true);
+    }
+    //Función para actualizar cada 5 segundos(5000 milisegundos)
+    setInterval("actualizar()", 7000);
+  </script> -->
+</html>

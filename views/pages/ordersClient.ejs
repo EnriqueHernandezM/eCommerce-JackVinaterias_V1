@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body class="bg-dark text-white">
+    <%- include('../partials/navbar'); %>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="m-2 ms-5 p-4 mb-5y">Compras por recibir</h2>
+        </div>
+        <%if(ordersByStatus.ordersCreate.length > 0) {%> <%ordersByStatus.ordersCreate.forEach((el) => { %>
+        <div class="col-xs-12 col-md-3 col-lg-3 mt-1 text-center">
+          <p>Numero de Orden: <%=el.numberOrder%></p>
+        </div>
+        <div class="col-xs-12 col-md-3 col-lg-3 mt-1 text-center">
+          <p>productos <%=el.totalProducts%></p>
+        </div>
+        <div class="col-xs-12 col-md-3 col-lg-3 mt-1 text-center">
+          <p>Fecha de creacion <%=el.creationDate%></p>
+        </div>
+        <div class="col-xs-12 col-md-3 col-lg-3 mt-1 mb-5 text-center">
+          <p>total del pedido $ <%=el.totalOrder%></p>
+        </div>
+        <%})%><% } %>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>Historial de compras</h2>
+        </div>
+        <%if(ordersByStatus.ordersEnv) {%> <%ordersByStatus.ordersEnv.forEach((el) => { %>
+        <div class="col-xs-12 col-md-3 col-lg-3 mt-1 text-center">
+          <p>Numero de Orden: <%=el.numberOrder%></p>
+        </div>
+        <div class="col-xs-12 col-md-1 col-lg-2 mt-1 text-center">
+          <p>prodctos<%=el.totalProducts%></p>
+        </div>
+        <div class="col-xs-12 col-md-3 col-lg-2 mt-1 text-center">
+          <p>Fecha de creacion <%=el.creationDate%></p>
+        </div>
+        <div class="col-xs-12 col-md-3 col-lg-3 mt-1 text-center">
+          <p>total del pedido<%=el.totalOrder%></p>
+        </div>
+        <div class="col-xs-12 col-md-2 col-lg-2 mt-1 text-center">
+          <p>Estatus <%=el.state%></p>
+        </div>
+        <%})%><%}%>
+      </div>
+    </div>
+    <%- include('../partials/footer'); %>
+  </body>
+</html>

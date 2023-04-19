@@ -1,0 +1,202 @@
+* {
+  /*reset*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} /*terminareset*/
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.25rem;
+  background: rgb(14, 14, 14);
+  color: white;
+}
+
+#boxMsges {
+  background-color: rgb(213, 230, 224);
+  padding: 1rem;
+  width: 55vw;
+  margin-left: 1.25rem;
+}
+#boxMsges .user {
+  font-weight: bold;
+  color: blue;
+  margin-bottom: 2px;
+  font-size: 1rem;
+}
+#boxMsges .mensaje {
+  font-style: italic;
+  color: green;
+  font-size: 1.2rem;
+}
+#boxMsges .hora {
+  color: maroon;
+  padding-bottom: 7px;
+  margin-left: 10px;
+  font-size: 0.75rem;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90vw;
+  padding: 2rem;
+}
+form #inputEmail {
+  margin-right: 75vw;
+  margin-bottom: 2rem;
+}
+form #inputMsg {
+  width: 35vw;
+}
+form .bEnv {
+  margin-left: 0.5rem;
+}
+
+#probandoAct {
+  display: flex;
+  flex-direction: row;
+  width: 80vw;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+#probandoAct div {
+  text-align: center;
+}
+#probandoAct div p {
+  font-size: 1.25rem;
+}
+#probandoAct div img {
+  width: 14rem;
+  height: 14rem;
+}
+#probandoAct div span {
+  cursor: pointer;
+}
+
+.imgchat {
+  width: 3.5rem;
+}
+
+.butomCrearCuenta div {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 5.5rem;
+}
+.butomCrearCuenta div a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  border-bottom: double 0.5rem #baab8f;
+  margin-right: 5.5rem;
+}
+.butomCrearCuenta div a:hover {
+  color: #a9a075;
+}
+
+.titleLogin div h1 {
+  border-top: double 0.5rem #baab8f;
+  font-size: 1.75rem;
+}
+
+.vistaPerfil div h3 {
+  text-align: left;
+}
+.vistaPerfil div img {
+  padding: 0.75rem;
+  width: 12.7rem;
+  height: 12.7rem;
+}
+.vistaPerfil .botonOut {
+  margin: 0.25rem;
+}
+.vistaPerfil .botonOut a {
+  margin-left: 51%;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 0.4rem;
+  color: aliceblue;
+  border-bottom: double 0.5rem #baab8f;
+}
+.vistaPerfil .botonOut a:hover {
+  color: #a9a075;
+}
+
+#footer {
+  border-top: double 0.5rem #baab8f;
+}
+
+.totalCarrito {
+  margin-left: 59%;
+  margin-bottom: 2rem;
+}
+.totalCarrito ul {
+  display: flex;
+  flex-direction: row;
+}
+.totalCarrito ul li {
+  list-style: none;
+}
+.totalCarrito ul li p {
+  border-top: double 0.5rem #baab8f;
+  padding: 0.25rem;
+  width: 100%;
+}
+.totalCarrito ul li a {
+  margin-left: 5.75rem;
+  text-decoration: none;
+  padding: 0.65rem;
+  border-radius: 15%;
+  color: #ffffff;
+  background-color: rgb(14, 14, 14);
+}
+.totalCarrito ul li a:hover {
+  color: #a9a075;
+}
+
+.logoVerCarrito ul {
+  display: flex;
+  justify-content: space-around;
+}
+.logoVerCarrito ul li {
+  list-style: none;
+}
+.logoVerCarrito ul li a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: aliceblue;
+  padding: 0.25rem;
+}
+.logoVerCarrito ul li a:hover {
+  color: #a9a075;
+}
+.logoVerCarrito ul li button {
+  display: inline-block;
+  font-size: 1.15rem;
+  border-radius: 7%;
+  padding: 0.15rem;
+  color: #ffffff;
+  background-color: rgb(41, 41, 41);
+  border: none;
+}
+.logoVerCarrito ul li button:hover {
+  color: #a9a075;
+}
+
+#renderCantItems {
+  background-color: #a9a075;
+  position: fixed;
+  border-radius: 3%;
+}
+#renderCantItems h3 {
+  padding: 2rem;
+}
+
+#contenedorForOrder {
+  padding: 2rem;
+  margin-top: 2.75rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: double 0.5rem #baab8f;
+}

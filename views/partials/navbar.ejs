@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-light w-100 bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand p-4 text-white fs-1 ms-5 me-5" href="/">JACK VINATERIAS</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      style="background-color: bisque"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto ps-5 me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="text-white nav-link p-3 ms-3me-3 fs-4" href="/api/productos">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="text-white nav-link p-3 ms-3 me-3 fs-4" href="/perfil/login"> Perfil</a>
+        </li>
+      </ul>
+
+      <form class="d-flex col-lg-5" role="search">
+        <input class="form-control me-1 w-50" type="search" placeholder="Search" id="ingresoBuscadorItems" aria-label="Search" />
+        <button onclick="buscadorItems()" class="btn btn-outline-success" type="button">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
