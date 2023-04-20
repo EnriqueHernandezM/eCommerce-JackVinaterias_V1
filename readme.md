@@ -1,5 +1,7 @@
 # Jack Vinaterias V_1
 
+## !!!Me falta agregar endpoints postman y terminar mi redmi
+
 ## Proyecto eCommerce desarrollado con una arquitectura de capas en Node.js
 
 Ete proyecto es la simulacion de un a Vinateria en linea capaz de renderizar o responder en Json
