@@ -10,7 +10,6 @@ const messageSchema = new schema.Entity("texts", {
   author: authorSchema,
 });
 const messageSchemaOk = [messageSchema];
-//PROBANDOOOO
 const mostrarRegreso = () => {
   if (regresoOn >= 18) {
     document.getElementById("acceso").remove();
