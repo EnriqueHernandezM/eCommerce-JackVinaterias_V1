@@ -3,15 +3,36 @@
   <head>
     <%- include('../partials/head'); %>
   </head>
-  <body class="bg-dark text-white">
+  <body class="bg-dark text-white" onload="mostrarRegreso()">
     <%- include('../partials/navbar'); %>
+    <div id="acceso">
+      <h1>Jack Vinaterias</h1>
+      <label for="entradaEdad">Este es un sitio solo para mayores de edad : </label>
+      <input type="number" id="entradaEdad" placeholder="edad" min="1" max="111" required />
+      <button type="button" onclick="respuesta()">Enviar</button>
+    </div>
+    <div id="respAnuncio"></div>
+    <div id="anuncioDestructuracion"></div>
     <div class="container-fluid d-flex">
       <div class="row align-items-center">
         <div class="col-lg-6">
           <h2 class="ps-5 ms-5">Bienvenido a esta gran Vinateria</h2>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-6">
           <img class="img-fluid w-100 p-2" src="<%=imagen%>" alt="Jack Daniels" />
+        </div>
+        <div class="col-lg-6">
+          <img
+            class="img-fluid w-100 p-2"
+            src="https://media.gq.com.mx/photos/61297780cd91d62b84879d07/master/w_3000,h_2002,c_limit/tequila-don-julio-a%C3%B1ejo.jpg"
+            alt="Tequila Don Julio"
+          />
+        </div>
+        <div class="col-lg-6">
+          <h2 class="ps-5 ms-5">
+            Don Julio<br />
+            Un Tequila Insuperable
+          </h2>
         </div>
       </div>
     </div>

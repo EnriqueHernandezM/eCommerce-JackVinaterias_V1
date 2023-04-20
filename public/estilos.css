@@ -11,6 +11,124 @@ body {
   color: white;
 }
 
+#acceso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 2.5vw;
+  top: 1rem;
+  width: 95vw;
+  opacity: 100;
+  animation-name: desaparece;
+  animation-duration: 10s;
+  animation-delay: 1s;
+  color: rgb(255, 219, 136);
+  font-family: "Trebuchet MS";
+  font-weight: 400;
+  background-color: rgba(38, 51, 51, 0.875);
+  height: 130vh;
+}
+#acceso h1 {
+  font-size: 5.5rem;
+}
+@media screen and (min-width: 992px) {
+  #acceso h1 {
+    font-size: 5.5rem;
+    padding: 5rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  #acceso {
+    background-color: rgba(38, 51, 51, 0.875);
+    padding: 3rem;
+    height: 182vh;
+  }
+}
+#acceso label {
+  padding-top: 15rem;
+  font-size: 1rem;
+}
+@media screen and (min-width: 992px) {
+  #acceso label {
+    font-size: 2rem;
+    padding: 10rem 0rem 7.5rem 0rem;
+  }
+}
+#acceso input {
+  height: 2rem;
+  border-radius: 5%;
+  width: 7rem;
+}
+@media screen and (min-width: 992px) {
+  #acceso input {
+    height: 2rem;
+    border-radius: 5%;
+    width: 8rem;
+    margin: 0.25rem;
+  }
+}
+#acceso button {
+  border-radius: 5%;
+  height: 2rem;
+  width: 5rem;
+  margin: 0.75rem;
+}
+
+#anuncioEntrada {
+  border-radius: 2%;
+  padding: 1rem;
+  position: absolute;
+  display: flex;
+  left: 10vw;
+  width: 80vw;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrrKQ77TBs8h_5HifeFI8mHku96PdvYi3aJ4u3qf3XPP4WP_KRtJMPeKUQCTz3QwcIi5c&usqp=CAU);
+  background-size: contain;
+  opacity: 0;
+  animation-name: desaparecer;
+  animation-duration: 7s;
+  animation-delay: 0.5s;
+  font-size: 1.25rem;
+  color: rgb(255, 219, 136);
+  font-family: "Trebuchet MS";
+  font-weight: 400;
+  margin: auto;
+}
+
+@keyframes desaparecer {
+  50% {
+    opacity: 100;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes desaparecer {
+  50% {
+    opacity: 100;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* main {
+  h4 {
+    font-size: 1.75rem;
+
+    padding: 3rem;
+    text-align: center;
+  }
+  h3 {
+    padding-top: 5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 1rem;
+    @include adaptablePagina {
+      font-size: 2.5rem;
+      padding: 3.5rem;
+    }
+  }
+} */
 #boxMsges {
   background-color: rgb(213, 230, 224);
   padding: 1rem;

@@ -113,10 +113,10 @@ const logOut = (req, res) => {
       } else {
         switch (environmentVars.typeInRes) {
           case "resJson":
-            res.status(204).json();
+            res.status(204).json({});
             break;
           case "":
-            res.status(204).render("pages/formloguear", { sessionE: "desp", mdg: mdgDesp });
+            res.status(202).render("pages/formloguear", { sessionE: "desp", mdg: mdgDesp });
             break;
         }
       }

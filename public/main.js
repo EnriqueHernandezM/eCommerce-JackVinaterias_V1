@@ -1,3 +1,6 @@
+let regreso = localStorage.getItem("inputValueEntradaEdad");
+let regresoOn = parseInt(regreso);
+
 const socket = io();
 const schema = normalizr.schema;
 const normalize = normalizr.normalize;
@@ -7,6 +10,61 @@ const messageSchema = new schema.Entity("texts", {
   author: authorSchema,
 });
 const messageSchemaOk = [messageSchema];
+//PROBANDOOOO
+const mostrarRegreso = () => {
+  if (regresoOn >= 18) {
+    document.getElementById("acceso").remove();
+  } else if (regresoOn <= 17) {
+    bloquearAcceso();
+  } else if (regresoOn == " ") {
+    document.getElementById("acceso");
+    respuesta();
+  }
+};
+const respuesta = () => {
+  let inputValue = document.getElementById("entradaEdad").value;
+  localStorage.setItem("inputValueEntradaEdad", inputValue);
+  if (inputValue >= 18) {
+    let inset = "";
+    inset =
+      inset +
+      `
+    <div id="anuncioEntrada">
+    </div>
+    `;
+    document.getElementById("respAnuncio").innerHTML = inset;
+    let mostrando = "";
+    let resulta = `Hola tienes ${inputValue} años binvenido`;
+    mostrando =
+      mostrando +
+      `<div>
+      <h3> 
+      <p>${resulta} </p>
+      </h3>
+     </div>
+      `;
+    document.getElementById("anuncioEntrada").innerHTML = mostrando;
+    document.getElementById("acceso").remove();
+  } else if (inputValue < 17) {
+    bloquearAcceso();
+  }
+};
+const bloquearAcceso = () => {
+  Swal.fire({
+    title: "<h5> Al parecer eres menor de edad</h5>",
+    icon: "warning",
+    html:
+      " NO tomes antes de los 18 te recomendamos visitar este sitio web " +
+      "<a href=https://www.clinicaalemana.cl/centro-de-extension/material-educativo/no-tomes-antes-de-los-18> VISITAR </a> ",
+    showCloseButton: false,
+    showCancelButton: false,
+    focusConfirm: false,
+    showConfirmButton: false,
+    confirmButtonText: false,
+    confirmButtonAriaLabel: false,
+    allowOutsideClick: false,
+  });
+};
 
 // Renderiza formulario para subir un nuevo producto
 const renderPostNewProducto = () => {
@@ -83,6 +141,7 @@ const newProduct = () => {
       }
       if (res.idAsignado) {
         alert("ProductoagregadoCorrectamente");
+        window.location.href = window.location.href;
       }
     })
     .catch((e) => {
@@ -93,7 +152,6 @@ const newProduct = () => {
 const renderFormActProduct = (number) => {
   let x = number;
   const p = JSON.parse(x);
-
   let htmlFormActProduct = "";
   htmlFormActProduct += `
   <div class="container-fluid mt-5">
@@ -173,6 +231,7 @@ const updateOneProduct = (idParameter) => {
       if (res.blockToAdmin) {
         alert("Reservado solo para administradores");
       }
+      window.location.href = window.location.href;
       console.log(res);
     });
 };
@@ -266,7 +325,7 @@ const deleteItemTrolley = (idItem) => {
     .then((res) => res.json())
     .then((res) => {
       if (res.msge == "producto eliminido de tu carrtio correctamente") {
-        window.location.href = window.location.href;
+        window.location.href = "/perfil/login";
       }
     });
 };
@@ -306,4 +365,3 @@ socket.on("listaMsgs", (data) => {
 });
 ////
 ///
-//

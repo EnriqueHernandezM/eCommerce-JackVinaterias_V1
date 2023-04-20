@@ -3604,3 +3604,8 @@
 {"err":"ruta inexistente","level":"warn","metodo":{"get":true},"ruta":"/estilos.css","timestamp":"2023-04-19T00:49:04.701Z"}
 {"err":"ruta inexistente","level":"warn","metodo":{"get":true},"ruta":"/public/main.js","timestamp":"2023-04-19T00:49:04.726Z"}
 {"err":"ruta inexistente","level":"warn","metodo":{"get":true},"ruta":"/estilos.css","timestamp":"2023-04-19T00:49:12.463Z"}
+{"err":"ruta inexistente","level":"warn","method":{"get":true},"route":"/favicon.ico","timestamp":"2023-04-20T02:39:07.589Z"}
+{"err":"ruta inexistente","level":"warn","method":{"get":true},"route":"/api/rgjyrjyrj","timestamp":"2023-04-20T08:02:31.252Z"}
+{"err":"ruta inexistente","level":"warn","method":{"get":true},"route":"/api/rgjyrjyrj","timestamp":"2023-04-20T08:03:35.270Z"}
+{"err":"ruta inexistente","level":"warn","method":{"get":true},"route":"/api/rgjyrjyrj","timestamp":"2023-04-20T08:04:41.029Z"}
+{"err":"ruta inexistente","level":"warn","method":{"get":true},"route":"/anime.min.js","timestamp":"2023-04-20T08:53:41.619Z"}
