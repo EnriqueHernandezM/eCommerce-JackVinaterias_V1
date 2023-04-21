@@ -3609,3 +3609,4 @@
 {"err":"ruta inexistente","level":"warn","method":{"get":true},"route":"/api/rgjyrjyrj","timestamp":"2023-04-20T08:03:35.270Z"}
 {"err":"ruta inexistente","level":"warn","method":{"get":true},"route":"/api/rgjyrjyrj","timestamp":"2023-04-20T08:04:41.029Z"}
 {"err":"ruta inexistente","level":"warn","method":{"get":true},"route":"/anime.min.js","timestamp":"2023-04-20T08:53:41.619Z"}
+{"err":"ruta inexistente","level":"warn","method":{"get":true},"route":"/favicon.ico","timestamp":"2023-04-21T20:59:51.899Z"}

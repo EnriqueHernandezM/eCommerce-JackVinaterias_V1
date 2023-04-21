@@ -7,7 +7,7 @@
   "main": "main.js",
   "scripts": {
     "test": "node benchmark.js",
-    "start": "nodemon app.js",
+    "start": "node app.js",
     "devMongo": "nodemon app.js 8080 mongo",
     "devMongoJson": "nodemon app.js 8080 mongo resJson",
     "devFirebas": "nodemon app.js 8080 firebas",

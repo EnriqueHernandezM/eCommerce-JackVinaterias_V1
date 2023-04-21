@@ -24,7 +24,7 @@ const session = require("./utils/session");
 
 class InitServer {
   constructor() {
-    this.PORT = environmentVars.PORT || puertoPorArgumentos;
+    this.PORT = environmentVars.PORT || puertoPorArgumentos || 8081;
     this.app = app;
     this.httpServer = httpServer;
     this.session = session;
