@@ -2,7 +2,7 @@
 
 ## Proyecto eCommerce desarrollado con una arquitectura de capas en Node.js
 
-Ete proyecto es la simulacion de un a Vinateria en linea capaz de renderizar o responder en Json
+Ete proyecto es la simulacion de una Vinateria en linea capaz de renderizar o responder en Json
 Con 2 bases de datos Firebase y MongoAtlas y persistencia en memoria para desarrollo
 
 🟢 App deploy AWS
