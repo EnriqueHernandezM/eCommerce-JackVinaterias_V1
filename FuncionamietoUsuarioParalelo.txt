@@ -1,0 +1,9 @@
+Al tener solo la Autenticacion con Mongo tuve que conectar las 2 DB en paralelo
+asi como crear el usuario.
+Entonces Firestore termina dependiendo de Mongo ya que ah la hora de hacer loguin y algunas otras funciones
+se pasan los req. del usuario que nos proporciona firebbas como el id de usuario
+por eso en la persistencia de firebas creamos una funcion que recibe el id de usuario en mongo 
+lo consulta y usa el correo que tampoco puede repetirse para consultar con firebas y retornar la informacion
+o id que usa en Firebas.
+Siento que sirvio para tener los mismos usuarion en ambas DB pero mas adelante me gustaria 
+hacer que passport soportara trabajar con ambas persistencias por separado.

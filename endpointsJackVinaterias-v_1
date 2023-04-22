@@ -1,0 +1,381 @@
+{
+	"info": {
+		"_postman_id": "e45e102c-1859-4cb6-ba24-3bee96188ffc",
+		"name": "jackVinaterias",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24071348"
+	},
+	"item": [
+		{
+			"name": "Crear una cuenta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"pedroAlvarado@gmail.com\",\r\n    \"password\":\"252521\",\r\n    \"nombre\":\"Pedro Alvarado\",\r\n    \"edad\": 22 ,\r\n    \"direccion\":\"calle las perlas, 55\",\r\n    \"telefono\":5520252325,\r\n    \"avatar\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkuzjnOTvx3qUWQrD2It-cuthPrMnDkcEJYw&usqp=CAU\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/perfil/crearCuenta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"perfil",
+						"crearCuenta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loginUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"quique166sb1@hotmail.com\",\r\n    \"password\":\"260199\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/perfil/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"perfil",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/perfil/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"perfil",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cerrar sesion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/perfil/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"perfil",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "traerInventario 1ero hacer post legin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "agregar un porducto a inventario+",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"product\": \"Moet Chandom\",\r\n    \"typeOfLiquor\": \"Champagne\",\r\n    \"price\": 980,\r\n    \"image\": \"https://www.sampieri.com.mx/wp-content/uploads/2018/07/CHAMPAGNE-MOET-CHANDON-BRUT-EST-MADERA.jpg\",\r\n    \"description\": \"Fundada en 1743, Moët & Chandon celebra los momentos memorables de la vida con una gama de champagnes únicos para cada ocasión.\",\r\n    \"stockItems\": 4,\r\n   \"codeItem\": 122\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "borrar un elemento del inventario",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/productos/64323e69685e0735d7ef8769",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos",
+						"64323e69685e0735d7ef8769"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modificar u elmento con id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n            \"product\": \"Don Pedro\",\r\n            \"typeOfLiquor\": \"Brandy\",\r\n            \"price\": 350,\r\n            \"image\": \"https://cdn.shopify.com/s/files/1/0402/2475/1766/products/BRANDYDONPEDRO1000MLSHOPIFY_700x.jpg?v=1637864473\",\r\n            \"description\": \"Brandy Don Pedro Reserva Especial 750 ml a un súper precio\",\r\n            \"stockItems\": 9,\r\n            \"codeItem\": 111,\r\n            \r\n  \r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/productos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "traer un elemento por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/productos/64232cdfd2a1ad8d9542af9b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos",
+						"64232cdfd2a1ad8d9542af9b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "agregar un producto a carrito",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/carrito/?cantidad=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carrito",
+						""
+					],
+					"query": [
+						{
+							"key": "cantidad",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "traerCarrito por id id en ver usuario",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/carrito/64326e341326eb4acc594a34",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carrito",
+						"64326e341326eb4acc594a34"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "borrar un item del carrito",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/carritodelete/64232cdfd2a1ad8d9542af9b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carritodelete",
+						"64232cdfd2a1ad8d9542af9b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "traer Todas las Ordenes solo Admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/ordenes/allorders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ordenes",
+						"allorders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "confirmar compra automatic. cambia id carrito",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/confirmarcompra",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"confirmarcompra"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "traer Ordenes Del usuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/ordenes/verMisCarritos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ordenes",
+						"verMisCarritos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
