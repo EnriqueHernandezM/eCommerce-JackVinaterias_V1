@@ -1,0 +1,7 @@
+DATA_BASS="connection mongodbAtlas"
+SESSION_SECRET=                   
+CORREO_SERVICE_ME=
+CORREO_SERVICE_ME_PASS=
+ACOUNT_SID=
+AUTH_TOKEN=
+CLUSTER=of

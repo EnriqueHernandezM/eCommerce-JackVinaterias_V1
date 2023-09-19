@@ -6,7 +6,6 @@
   },
   "main": "main.js",
   "scripts": {
-    "test": "node benchmark.js",
     "start": "node app.js",
     "devMongo": "nodemon app.js 8080 mongo",
     "devMongoJson": "nodemon app.js 8080 mongo resJson",

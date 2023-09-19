@@ -88,65 +88,7 @@
     opacity: 0;
   }
 }
-/* main {
-  h4 {
-    font-size: 1.75rem;
 
-    padding: 3rem;
-    text-align: center;
-  }
-  h3 {
-    padding-top: 5rem;
-    text-align: center;
-    font-size: 1.5rem;
-    padding: 1rem;
-    @include adaptablePagina {
-      font-size: 2.5rem;
-      padding: 3.5rem;
-    }
-  }
-} */
-#boxMsges {
-  background-color: rgb(213, 230, 224);
-  padding: 1rem;
-  width: 55vw;
-  margin-left: 1.25rem;
-  .user {
-    font-weight: bold;
-    color: blue;
-    margin-bottom: 2px;
-    font-size: 1rem;
-  }
-  .mensaje {
-    font-style: italic;
-    color: green;
-    font-size: 1.2rem;
-  }
-  .hora {
-    color: maroon;
-    padding-bottom: 7px;
-    margin-left: 10px;
-    font-size: 0.75rem;
-  }
-}
-form {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 90vw;
-  padding: 2rem;
-  #inputEmail {
-    margin-right: 75vw;
-    margin-bottom: 2rem;
-  }
-
-  #inputMsg {
-    width: 35vw;
-  }
-  .bEnv {
-    margin-left: 0.5rem;
-  }
-}
 #probandoAct {
   display: flex;
   flex-direction: row;

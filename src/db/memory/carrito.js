@@ -52,6 +52,20 @@ class ContainerCarritoMem {
       logger.log("error", `errInTrolleyMem${err}`);
     }
   };
+  actCantToPursch = async (idTrolley, idProduct, catAct) => {
+    try {
+      let myTrolley = this.getAllTrolley(idTrolley);
+      let arrItems;
+      for (const el of myTrolley) {
+        arrItems = el.carrito;
+      }
+      let indexProductoToMod = arrItems.findIndex((el) => el._id == idProduct);
+      arrItems[indexProductoToMod].cantidad = catAct;
+      return { msge: "cantidad aumentada" };
+    } catch (err) {
+      logger.log("error", `errInTrolleyMem${err}`);
+    }
+  };
   deleteOneItemByTrolley = async (idTrolley, carrito) => {
     try {
       let datasAct = this.getAllTrolley(idTrolley);

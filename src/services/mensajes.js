@@ -43,7 +43,7 @@ class ContenedorMsjes {
         edad: infoUser.edad,
       };
       let text1 = mensaje.text;
-      const saveMsgDtb = await DaoMessages.guardarNuevoMensaje(author1, text1, timestamp);
+      await DaoMessages.guardarNuevoMensaje(author1, text1, timestamp);
       let act = await this.readMsgs();
       return act;
     } catch (err) {

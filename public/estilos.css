@@ -11,6 +11,51 @@ body {
   color: white;
 }
 
+.navbar div h1 a {
+  font-size: 100%;
+}
+#boxMsges {
+  background-color: rgb(213, 230, 224);
+  padding: 1rem;
+  width: 55vw;
+  margin-left: 1.25rem;
+}
+#boxMsges .user {
+  font-weight: bold;
+  color: blue;
+  margin-bottom: 2px;
+  font-size: 1rem;
+}
+#boxMsges .mensaje {
+  font-style: italic;
+  color: green;
+  font-size: 1.2rem;
+}
+#boxMsges .hora {
+  color: maroon;
+  padding-bottom: 7px;
+  margin-left: 10px;
+  font-size: 0.75rem;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90vw;
+  padding: 2rem;
+}
+form #inputEmail {
+  margin-right: 75vw;
+  margin-bottom: 2rem;
+}
+form #inputMsg {
+  width: 35vw;
+}
+form .bEnv {
+  margin-left: 0.5rem;
+}
+
 #acceso {
   display: flex;
   flex-direction: column;
@@ -111,66 +156,6 @@ body {
     opacity: 0;
   }
 }
-/* main {
-  h4 {
-    font-size: 1.75rem;
-
-    padding: 3rem;
-    text-align: center;
-  }
-  h3 {
-    padding-top: 5rem;
-    text-align: center;
-    font-size: 1.5rem;
-    padding: 1rem;
-    @include adaptablePagina {
-      font-size: 2.5rem;
-      padding: 3.5rem;
-    }
-  }
-} */
-#boxMsges {
-  background-color: rgb(213, 230, 224);
-  padding: 1rem;
-  width: 55vw;
-  margin-left: 1.25rem;
-}
-#boxMsges .user {
-  font-weight: bold;
-  color: blue;
-  margin-bottom: 2px;
-  font-size: 1rem;
-}
-#boxMsges .mensaje {
-  font-style: italic;
-  color: green;
-  font-size: 1.2rem;
-}
-#boxMsges .hora {
-  color: maroon;
-  padding-bottom: 7px;
-  margin-left: 10px;
-  font-size: 0.75rem;
-}
-
-form {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 90vw;
-  padding: 2rem;
-}
-form #inputEmail {
-  margin-right: 75vw;
-  margin-bottom: 2rem;
-}
-form #inputMsg {
-  width: 35vw;
-}
-form .bEnv {
-  margin-left: 0.5rem;
-}
-
 #probandoAct {
   display: flex;
   flex-direction: row;
@@ -317,4 +302,8 @@ form .bEnv {
   margin-left: auto;
   margin-right: auto;
   border-bottom: double 0.5rem #baab8f;
+}
+
+#footer {
+  border-top: double 0.5rem #baab8f;
 }

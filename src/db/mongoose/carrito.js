@@ -68,6 +68,33 @@ class ContainerCarritoMongo {
       logger.log("error", `errInTrolleyMdb${err}`);
     }
   };
+  actCantToPursch = async (idTrolley, idProduct, catAct) => {
+    try {
+      let myTrolleyAct = await this.getAllTrolley(idTrolley);
+      let arrItems;
+      for (const data of myTrolleyAct) {
+        arrItems = data.carrito;
+      }
+      let idProductN = idProduct.toString();
+      let indexProductoToMod = arrItems.findIndex((el) => el._id == idProductN);
+      arrItems[indexProductoToMod].cantidad = catAct;
+      let modifiElement = await Trolley.updateOne(
+        { _id: idTrolley },
+        {
+          $set: {
+            carrito: arrItems,
+          },
+        }
+      );
+      if (modifiElement.modifiedCount >= 1) {
+        return { msge: "cantidad aumentada" };
+      } else {
+        return null;
+      }
+    } catch (err) {
+      logger.log("error", `errInTrolleyMem${err}`);
+    }
+  };
   deleteOneItemByTrolley = async (idTrolley, carritoR) => {
     try {
       const agregarItem = await Trolley.updateOne(

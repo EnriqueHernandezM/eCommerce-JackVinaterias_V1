@@ -40,23 +40,38 @@ class ContainerCarritoFirebas {
       });
       return arrayRes;
     } catch (err) {
-      logger.log("error", `errInTroleyFB${err}`);
+      logger.log("error", `errInGetsTroleyFB${err}`);
     }
   };
   pushAoneTrolley = async (idUser, catchProduct, cantToPUrch) => {
     try {
       const catchMyUserFb = await db.collection(this.collection).doc(idUser).get();
       const catchMyUser = catchMyUserFb.data();
-      const Act = catchMyUser.carrito;
+      const actuallTrolley = catchMyUser.carrito;
       const acumuladorProductos = [];
       catchProduct.cantidad = cantToPUrch;
-      acumuladorProductos.push(catchProduct, ...Act);
+      acumuladorProductos.push(catchProduct, ...actuallTrolley);
       let agregar = await db.collection(this.collection).doc(idUser).update({ carrito: acumuladorProductos });
       if (agregar) {
         return { msge: "producto Correctamente afregado a carrito" };
       }
     } catch (err) {
-      logger.log("error", `errInTroleyFB${err}`);
+      logger.log("error", `errInAddTroleyFB${err}`);
+    }
+  };
+  actCantToPursch = async (idTrolley, idProduct, cantActualized) => {
+    try {
+      let myTrolley = await this.getAllTrolley(idTrolley);
+      let arrItems;
+      for (const el of myTrolley) {
+        arrItems = el.carrito;
+      }
+      let indexProductoToMod = arrItems.findIndex((el) => el._id == idProduct);
+      arrItems[indexProductoToMod].cantidad = cantActualized;
+      let actualizedAmountItems = await db.collection(this.collection).doc(idTrolley).update({ carrito: arrItems });
+      return { msge: "cantidad aumentada" };
+    } catch (err) {
+      logger.log("error", `errInTrolleyActCantfb${err}`);
     }
   };
   deleteOneItemByTrolley = async (idTrolley, carrito) => {
@@ -88,7 +103,7 @@ class ContainerCarritoFirebas {
   };
   dataOneTrolley = async (idUsuario) => {
     try {
-      const userThisDb = await this.transformTheUser(idUsuario);
+      const userThisDb = await ContainerCarritoFirebas.transformTheUser(idUsuario);
       const datas = await db.collection(this.collection).where("emailUser", "==", userThisDb.email).get();
       let trolley;
       datas.docs.forEach((el) => {
@@ -96,12 +111,13 @@ class ContainerCarritoFirebas {
       });
       return trolley;
     } catch (err) {
-      logger.log("error", `errInTroleyFB${err}`);
+      logger.log("error", `errInDataTroleyFB${err}`);
     }
   };
   /* Ya que solo pudimos usar passport con MD desde el controlador nos manda el id user de mongo
   aqui se recibe u manda la informacion de usuario para poder usarla con en firebas con el correo
   que de igual manera no se puede repetir */
+
   static transformTheUser = async (forTrolley, forUser) => {
     try {
       if (forTrolley == null && forUser && typeof forUser === "string") {
@@ -112,10 +128,20 @@ class ContainerCarritoFirebas {
         const user = await Usuarios.findById(forUser);
         return user;
       } else {
+        let use;
         const user = await Usuarios.find({ idTrolley: forTrolley });
         for (const props of user) {
-          return props;
+          use = props;
         }
+        if (use === undefined) {
+          const datas = await db.collection("usuarios").where("idTrolley", "==", forTrolley).get();
+          let trolley;
+          datas.docs.forEach((el) => {
+            trolley = { ...el.data() };
+          });
+          return trolley;
+        }
+        return use;
       }
     } catch (err) {
       logger.log("error", `errInTroleyFBTransFormUser${err}`);

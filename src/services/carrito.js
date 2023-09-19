@@ -41,6 +41,10 @@ class ContainerTrolley {
       }
       //si catchUser.idTrolley ya tiene asignado manda
       const idToTrolley = trolleyUsed || catchUser.idTrolley;
+      let validit = await ContainerTrolley.validateCantToPursch(idToTrolley, idProducto, cantToPUrch);
+      if (validit) {
+        return validit;
+      }
       const agregarItem = await DaoTrolleys.pushAoneTrolley(idToTrolley, catchProduct, cantToPUrch);
       return agregarItem;
     } catch (err) {
@@ -162,6 +166,29 @@ class ContainerTrolley {
     } catch (err) {
       logger.log("error", `${err}`);
     }
+  };
+  static validateCantToPursch = async (idTrolley, idProduct, cantidadTopurch) => {
+    const itemsExisting = await DaoTrolleys.getAllTrolley(idTrolley);
+    let amounts;
+    let veryfiResponse;
+    for (const data of itemsExisting) {
+      amounts = data.carrito;
+    }
+    let idExistingInTrolley;
+    let amountUpload;
+    amounts.forEach(async (el) => {
+      if (el._id == idProduct) {
+        let modifiedAmountItems = parseInt(el.cantidad) + parseInt(cantidadTopurch);
+        idExistingInTrolley = el._id;
+        amountUpload = modifiedAmountItems;
+      }
+    });
+    if (idExistingInTrolley) {
+      let actItem = await DaoTrolleys.actCantToPursch(idTrolley, idExistingInTrolley, amountUpload);
+      veryfiResponse = actItem;
+      return veryfiResponse;
+    }
+    return null;
   };
 }
 module.exports = { ContainerTrolley };

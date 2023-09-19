@@ -1,0 +1,41 @@
+#boxMsges {
+  background-color: rgb(213, 230, 224);
+  padding: 1rem;
+  width: 55vw;
+  margin-left: 1.25rem;
+  .user {
+    font-weight: bold;
+    color: blue;
+    margin-bottom: 2px;
+    font-size: 1rem;
+  }
+  .mensaje {
+    font-style: italic;
+    color: green;
+    font-size: 1.2rem;
+  }
+  .hora {
+    color: maroon;
+    padding-bottom: 7px;
+    margin-left: 10px;
+    font-size: 0.75rem;
+  }
+}
+form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90vw;
+  padding: 2rem;
+  #inputEmail {
+    margin-right: 75vw;
+    margin-bottom: 2rem;
+  }
+
+  #inputMsg {
+    width: 35vw;
+  }
+  .bEnv {
+    margin-left: 0.5rem;
+  }
+}

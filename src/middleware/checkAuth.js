@@ -9,6 +9,9 @@ function checkAuthentication(req, res, next) {
 }
 
 function checkAuthenticationAdmin(req, res, next) {
+  ///
+  ///crear enviroment var
+  ///
   if (req.isAuthenticated() && req.user.email === "quique166sb1@hotmail.com") {
     next();
   } else {
