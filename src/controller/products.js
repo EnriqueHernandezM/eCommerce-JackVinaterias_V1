@@ -1,6 +1,6 @@
 const environmentVars = require("../config/config");
 const logger = require("../utils/loggers");
-const { ContainerProducts } = require("../services/productos");
+const { ContainerProducts } = require("../services/products");
 const containerProducts = new ContainerProducts();
 const ContenedorMsjes = require("../services/mensajes");
 const containerMsjes = new ContenedorMsjes();

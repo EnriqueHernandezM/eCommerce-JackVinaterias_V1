@@ -7,16 +7,7 @@ const logger = require("./utils/loggers");
 const flash = require("connect-flash");
 const passport = require("passport");
 const environmentVars = require("./config/config");
-const {
-  index,
-  apiOrders,
-  apiProductos,
-  randomOperation,
-  infoConCompresion,
-  apiCarrito,
-  authentication,
-  failRoute,
-} = require("./routers/allRouts");
+const { index, apiOrders, apiProducts, apiTrolley, authentication, failRoute } = require("./routers/allRouts");
 const httpServer = require("http").createServer(app);
 const io = require("socket.io")(httpServer);
 const socketModule = require("./controller/socketsMensajes/sockets");
@@ -36,8 +27,12 @@ class InitServer {
     this.initSocket();
   }
   initDbs() {
+    ////////////////
+    ////////
+    ///
     /* aqui conectamos con mongo y firebas paraleo ya que al tener un solo passport 
-necesitamos crear usuario en paralelo para su registro */
+necesitamos crear usuario en paralelo para su registro 
+ya que cambiemos passport conectar por env var*/
     require("./utils/databasConecctions/mongoose");
     require("./utils/databasConecctions/firebas");
   }
@@ -61,10 +56,8 @@ necesitamos crear usuario en paralelo para su registro */
   routes() {
     this.app.use("/", index);
     this.app.use("/api/ordenes", apiOrders);
-    this.app.use("/api", apiProductos);
-    this.app.use("/operacion", randomOperation);
-    this.app.use("/info", infoConCompresion);
-    this.app.use("/api", apiCarrito);
+    this.app.use("/api", apiProducts);
+    this.app.use("/api", apiTrolley);
     this.app.use("/perfil", authentication);
     this.app.get("*", failRoute);
   }

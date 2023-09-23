@@ -3,15 +3,20 @@ const passport = require("passport");
 const { Router } = express;
 const authentication = new Router();
 
-const { getCreateAcount, getLogIn, postCreateAcount, postLogIn, logOut } = require("../controller/authentication");
-authentication.get("/crearCuenta", getCreateAcount);
-authentication.get("/login", getLogIn);
-authentication.get("/logout", logOut);
+const { ControllerAuthentication } = require("../controller/authentication");
+const controllerAuthentication = new ControllerAuthentication();
+authentication.get("/crearCuenta", controllerAuthentication.getCreateAcount);
+authentication.get("/login", controllerAuthentication.getLogIn);
+authentication.get("/logout", controllerAuthentication.logOut);
 authentication.post(
   "/crearCuenta",
   passport.authenticate("crearCuenta", { passReqToCallback: true, failureRedirect: "/perfil/crearCuenta" }),
-  postCreateAcount
+  controllerAuthentication.postCreateAcount
 );
-authentication.post("/login", passport.authenticate("login", { passReqToCallback: true, failureRedirect: "/perfil/login" }), postLogIn);
+authentication.post(
+  "/login",
+  passport.authenticate("login", { passReqToCallback: true, failureRedirect: "/perfil/login" }),
+  controllerAuthentication.postLogIn
+);
 
 module.exports = authentication;
