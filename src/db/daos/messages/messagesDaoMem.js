@@ -1,4 +1,4 @@
-const ContainerMessagesMem = require("../../memory/mensajes"); //ok
+const ContainerMessagesMem = require("../../memory/messages"); //ok
 class MessagesDaoMem extends ContainerMessagesMem {
   constructor() {
     super();

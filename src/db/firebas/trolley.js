@@ -1,5 +1,5 @@
 const logger = require("../../utils/loggers");
-const { Usuarios } = require("../mongoose/usuarios");
+const { Users } = require("../mongoose/users");
 const { getFirestore } = require("firebase-admin/firestore");
 const db = getFirestore();
 const moment = require("moment");
@@ -125,11 +125,11 @@ class ContainerCarritoFirebas {
         return datas.data();
       }
       if (forTrolley == null && forUser) {
-        const user = await Usuarios.findById(forUser);
+        const user = await Users.findById(forUser);
         return user;
       } else {
         let use;
-        const user = await Usuarios.find({ idTrolley: forTrolley });
+        const user = await Users.find({ idTrolley: forTrolley });
         for (const props of user) {
           use = props;
         }

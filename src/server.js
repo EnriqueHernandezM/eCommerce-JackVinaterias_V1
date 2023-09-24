@@ -10,7 +10,7 @@ const environmentVars = require("./config/config");
 const { index, apiOrders, apiProducts, apiTrolley, authentication, failRoute } = require("./routers/allRouts");
 const httpServer = require("http").createServer(app);
 const io = require("socket.io")(httpServer);
-const socketModule = require("./controller/socketsMensajes/sockets");
+const socketModule = require("./controller/socketMessages/sockets");
 const session = require("./utils/session");
 
 class InitServer {

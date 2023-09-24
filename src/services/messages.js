@@ -3,8 +3,7 @@ const timestamp = moment().format("lll");
 const logger = require("../utils/loggers");
 const { DaoMessages } = require("../db/daos/indexDaos");
 const { normalize, schema } = require("normalizr");
-const { Usuarios } = require("../db/mongoose/usuarios");
-const usuarios = require("../utils/createUserParallel");
+
 let infoUser;
 const authorSchema = new schema.Entity("authors", {}, { idAttribute: "idmail" });
 const messageSchema = new schema.Entity("texts", {
@@ -13,7 +12,7 @@ const messageSchema = new schema.Entity("texts", {
 
 const messageSchemaOk = [messageSchema];
 ///
-class ContenedorMsjes {
+class ContainerMessages {
   constructor() {}
   async readMsgs() {
     try {
@@ -61,4 +60,4 @@ class ContenedorMsjes {
     }
   }
 }
-module.exports = ContenedorMsjes;
+module.exports = ContainerMessages;

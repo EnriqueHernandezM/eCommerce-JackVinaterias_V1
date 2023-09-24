@@ -1,4 +1,4 @@
-const ContainerMessagesFirebas = require("../../firebas/mensajes");
+const ContainerMessagesFirebas = require("../../firebas/messages");
 
 class MessagesDaoFirebas extends ContainerMessagesFirebas {
   constructor() {

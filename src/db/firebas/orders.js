@@ -1,5 +1,5 @@
 const logger = require("../../utils/loggers");
-const { Usuarios } = require("../mongoose/usuarios");
+const { Users } = require("../mongoose/users");
 const { getFirestore } = require("firebase-admin/firestore");
 require("../../utils/databasConecctions/firebas");
 const db = getFirestore();
@@ -64,7 +64,7 @@ class ContainerOrdersFirebas {
   };
   static transformTheUserForOrders = async (idCustomer) => {
     try {
-      const user = await Usuarios.findById(idCustomer);
+      const user = await Users.findById(idCustomer);
       return user;
     } catch (err) {
       logger.log("error", `errInTroleyFBTransFormUser${err}`);

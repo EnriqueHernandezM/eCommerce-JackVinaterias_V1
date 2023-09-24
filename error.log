@@ -1,0 +1,11 @@
+{"level":"error","message":" ❌ DB OFF Error: querySrv ENOTFOUND _mongodb._tcp.cluster0.ckqspop.mongodb.net","timestamp":"2023-09-24T03:03:09.894Z"}
+{"level":"error","message":" ❌ DB OFF Error: querySrv ENOTFOUND _mongodb._tcp.cluster0.ckqspop.mongodb.net","timestamp":"2023-09-24T03:03:19.370Z"}
+{"level":"error","message":"error in getApiProducto controllerTypeError: Cannot read properties of undefined (reading 'toUpperCase')","timestamp":"2023-09-24T04:46:40.607Z"}
+{"level":"error","message":"error in postcreateAcount controllerReferenceError: getLogIn is not defined","timestamp":"2023-09-24T06:55:26.262Z"}
+{"level":"error","message":"error in postcreateAcount controllerReferenceError: getLogIn is not defined","timestamp":"2023-09-24T06:56:52.990Z"}
+{"level":"error","message":"error in postcreateAcount controllerReferenceError: getLogIn is not defined","timestamp":"2023-09-24T06:58:56.300Z"}
+{"level":"error","message":"error in postcreateAcount controllerReferenceError: getLogIn is not defined","timestamp":"2023-09-24T07:00:34.265Z"}
+{"level":"error","message":"error in postcreateAcount controllerReferenceError: getLogIn is not defined","timestamp":"2023-09-24T07:01:50.267Z"}
+{"level":"error","message":"error in postcreateAcount controllerReferenceError: getLogIn is not defined","timestamp":"2023-09-24T07:08:51.095Z"}
+{"level":"error","message":"error in postcreateAcount controllerReferenceError: getLogIn is not defined","timestamp":"2023-09-24T07:11:29.662Z"}
+{"level":"error","message":"error in postcreateAcount controllerReferenceError: getLogIn is not defined","timestamp":"2023-09-24T07:12:11.049Z"}

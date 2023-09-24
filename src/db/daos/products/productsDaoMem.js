@@ -1,4 +1,4 @@
-const { ContainerProductMem } = require("../../memory/productos");
+const { ContainerProductMem } = require("../../memory/products");
 
 class ProductsDaoMem extends ContainerProductMem {
   constructor() {

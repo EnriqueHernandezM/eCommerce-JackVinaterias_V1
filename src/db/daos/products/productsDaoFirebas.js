@@ -1,4 +1,4 @@
-const ContainerProductFirebas = require("../../firebas/productos");
+const ContainerProductFirebas = require("../../firebas/products");
 class ProductsDaoFirebas extends ContainerProductFirebas {
   constructor() {
     super("inventarios");

@@ -98,7 +98,7 @@ class ControllerAuthentication {
   postCreateAcount = (req, res) => {
     try {
       logger.log("info", { route: req.originalUrl, method: req.route.methods });
-      getLogIn(req, res);
+      this.getLogIn(req, res);
       req, res;
     } catch (err) {
       logger.log("error", `error in postcreateAcount controller${err}`);

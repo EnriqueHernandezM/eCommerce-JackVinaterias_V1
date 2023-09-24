@@ -1,5 +1,5 @@
 const logger = require("../../utils/loggers");
-const { Usuarios } = require("../mongoose/usuarios");
+const { Users } = require("../mongoose/users");
 const { Schema, model } = require("mongoose");
 const TrolleySchema = new Schema({
   idUser: { type: String },
@@ -16,7 +16,7 @@ class ContainerCarritoMongo {
 
   createOneNewTrolley = async (idMyUsuer) => {
     try {
-      const catchMyUser = await Usuarios.findById(idMyUsuer); //recibo el id Usuario
+      const catchMyUser = await Users.findById(idMyUsuer); //recibo el id Usuario
       let theTrolley = {
         idUser: idMyUsuer,
         emailUser: catchMyUser.email,
@@ -24,7 +24,7 @@ class ContainerCarritoMongo {
       };
       const newTrolley = new Trolley(theTrolley);
       return await newTrolley.save().then(async (data) => {
-        await Usuarios.updateOne(
+        await Users.updateOne(
           { _id: idMyUsuer },
           {
             $set: {
@@ -116,7 +116,7 @@ class ContainerCarritoMongo {
   };
   dataOneUser = async (idUsuario) => {
     try {
-      return await Usuarios.find({ _id: idUsuario });
+      return await Users.find({ _id: idUsuario });
     } catch (err) {
       logger.log("error", `errInTrolleyMdb${err}`);
     }

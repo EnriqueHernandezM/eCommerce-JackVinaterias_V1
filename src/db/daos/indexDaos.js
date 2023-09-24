@@ -16,7 +16,10 @@ const TrolleysDaoMem = require("./trolleys/trolleysDaoMem");
 const MessagesDaoMongo = require("./messages/messagesDaoMongo");
 const MessagesDaoFirebas = require("./messages/messagesDaoFirebas");
 const MessagesDaoMem = require("./messages/messagesDaoMem");
-
+//Daos Users
+const UsersDaoMongo = require("./usersOfAuth/usersDaoMongo");
+const UsersDaoFirebas = require("./usersOfAuth/usersDaoFirebas");
+const UsersDaoMem = require("./usersOfAuth/usersDaoMem");
 const instancias = [
   {
     nombre: OrdersDaoMongo,
@@ -78,6 +81,21 @@ const instancias = [
     id: "mem",
     descripcion: "messages",
   },
+  {
+    nombre: UsersDaoMongo,
+    id: "mongo",
+    descripcion: "users",
+  },
+  {
+    nombre: UsersDaoFirebas,
+    id: "firebas",
+    descripcion: "users",
+  },
+  {
+    nombre: UsersDaoMem,
+    id: "mem",
+    descripcion: "users",
+  },
 ];
 
 const instancia = instancias.filter((el) => el.id == dataBasForConsole);
@@ -86,6 +104,7 @@ const rutaResult = {
   [instancia[1].descripcion]: instancia[1].nombre,
   [instancia[2].descripcion]: instancia[2].nombre,
   [instancia[3].descripcion]: instancia[3].nombre,
+  [instancia[4].descripcion]: instancia[4].nombre,
 };
 
 logger.log("info", `✅ Conectado ah la DB ${dataBasForConsole}`);
@@ -94,5 +113,6 @@ let DaoOrders = new rutaResult.orders();
 let DaoProducts = new rutaResult.products();
 let DaoTrolleys = new rutaResult.trolleys();
 let DaoMessages = new rutaResult.messages();
+let DaoUsers = new rutaResult.users();
 
-module.exports = { DaoOrders, DaoProducts, DaoTrolleys, DaoMessages };
+module.exports = { DaoOrders, DaoProducts, DaoTrolleys, DaoMessages, DaoUsers };

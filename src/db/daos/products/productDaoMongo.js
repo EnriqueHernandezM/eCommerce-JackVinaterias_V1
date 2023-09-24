@@ -1,4 +1,4 @@
-const { ContainerProductMongo } = require("../../mongoose/productos");
+const { ContainerProductMongo } = require("../../mongoose/products");
 
 class ProductsDaoMongo extends ContainerProductMongo {
   constructor() {

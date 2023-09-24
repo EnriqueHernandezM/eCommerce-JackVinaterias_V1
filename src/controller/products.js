@@ -2,8 +2,8 @@ const environmentVars = require("../config/config");
 const logger = require("../utils/loggers");
 const { ContainerProducts } = require("../services/products");
 const containerProducts = new ContainerProducts();
-const ContenedorMsjes = require("../services/mensajes");
-const containerMsjes = new ContenedorMsjes();
+const ContenedorMessages = require("../services/messages");
+const containerMessages = new ContenedorMessages();
 
 class ControllerProducts {
   constructor() {}
@@ -27,7 +27,7 @@ class ControllerProducts {
     try {
       logger.log("info", { route: req.originalUrl, method: req.route.methods });
       const allItemsGet = await containerProducts.getAll();
-      containerMsjes.infoUserToChat(req.user);
+      containerMessages.infoUserToChat(req.user);
       switch (environmentVars.typeInRes) {
         case "resJson":
           res.status(200).json({ inventario: allItemsGet });

@@ -1,4 +1,4 @@
-const { ContainerCarritoMongo } = require("../../mongoose/carrito");
+const { ContainerCarritoMongo } = require("../../mongoose/trolley");
 
 class TrolleysDaoMongo extends ContainerCarritoMongo {
   constructor() {

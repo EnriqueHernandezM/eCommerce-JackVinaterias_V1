@@ -1,4 +1,4 @@
-const ContainerMessagesMongo = require("../../mongoose//mensajes");
+const ContainerMessagesMongo = require("../../mongoose/messages");
 
 class MessagesDaoMongo extends ContainerMessagesMongo {
   constructor() {
