@@ -38,6 +38,7 @@ class ContainerUsersMongo {
     try {
       const newUserAdd = new Users(newUser);
       return await newUserAdd.save().then((data) => {
+        console.log(data);
         return data;
       });
     } catch (err) {

@@ -6,9 +6,7 @@ class ContainerAuthentication {
   async getInfoUser(email, funcGetUser) {
     try {
       const resUser = await DaoUsers.getOneUserForEmailDb(email);
-      if (resUser == null) {
-        funcGetUser(null, false);
-      }
+
       if (resUser && resUser.email === email) {
         funcGetUser(null, resUser);
       } else {
@@ -21,7 +19,7 @@ class ContainerAuthentication {
   async getUserToDeserialize(id, done) {
     try {
       const resUserById = await DaoUsers.getOneUserForIdDb(id);
-      if (resUserById.id === id) {
+      if (resUserById._id == id) {
         done(null, resUserById);
       } else {
         done(null, false);
@@ -33,6 +31,7 @@ class ContainerAuthentication {
   async createNewUser(newUser, funcRes) {
     try {
       const userAddOk = await DaoUsers.createNewUserDb(newUser);
+      console.log(userAddOk);
       if (userAddOk) {
         funcRes(null, userAddOk);
       }

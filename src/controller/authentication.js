@@ -28,7 +28,7 @@ class ControllerAuthentication {
             res.status(202).render("pages/formloguear", { sessionE: true, userE: user, carritoE: trolley, total: total || 0 });
             break;
         }
-      } else if (req.isAuthenticated() == false) {
+      } else if (!req.isAuthenticated()) {
         switch (environmentVars.typeInRes) {
           case "resJson":
             res.status(202).json({
@@ -87,9 +87,9 @@ class ControllerAuthentication {
     try {
       logger.log("info", { route: req.path, method: req.route.methods });
       if (req.isAuthenticated()) {
-        res.render("pages/crearCuenta", {});
-      } else {
-        res.render("pages/crearCuenta", {});
+        res.status(202).res.render("pages/crearCuenta", {});
+      } else if (!req.isAuthenticated()) {
+        this.getLogIn(req, res);
       }
     } catch (err) {
       logger.log("error", `error in getCreateAcount controller${err}`);
@@ -99,7 +99,6 @@ class ControllerAuthentication {
     try {
       logger.log("info", { route: req.originalUrl, method: req.route.methods });
       this.getLogIn(req, res);
-      req, res;
     } catch (err) {
       logger.log("error", `error in postcreateAcount controller${err}`);
     }

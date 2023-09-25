@@ -7,7 +7,6 @@ const { Users } = require("../../db/mongoose/users"); //Eliminar cuando aestye e
 const bcrypt = require("bcrypt");
 const enviarcorreo = require("../nodemailer");
 const logger = require("../loggers");
-const { createUserParallel } = require("../createUserParallel");
 
 passport.serializeUser((user, done) => {
   done(null, user._id);
@@ -95,7 +94,7 @@ passport.use(
       containerAuthentication.getInfoUser(email, (err, user) => {
         if (err) return done(err);
         if (!user) {
-          logger.log("info", `User Not Found with email${email}`);
+          logger.log("warn", `User Not Found with email${email}`);
           return done(null, false, req.flash("crearCuentamsg", "tenemos algun problema o verifica tu informacion"));
         }
         if (!isValidPassword(user, password)) {

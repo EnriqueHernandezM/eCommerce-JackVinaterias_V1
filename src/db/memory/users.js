@@ -1,7 +1,7 @@
 const logger = require("../../utils/loggers");
 const usersMem = [
   {
-    _id: "642ca609ffc507b352621f49",
+    _id: "1",
     email: "quique166sb1@hotmail.com",
     password: "$2b$10$hdMQHkjQhybrI64B1j73K.gjroU6GJr.XPpAq9bLgZbFxzyQj7AzC",
     nombre: "Enrique",
@@ -15,33 +15,44 @@ const usersMem = [
 ];
 class ContainerUsersMem {
   constructor() {
-    this.usersMem = usersMem;
+    this.file = usersMem;
   }
-  /////////////////////////////////////////////////Funcion Para Dezerializer
   getOneUserForEmailDb = (email) => {
     try {
-      for (const el of this.usersMem) {
+      for (const el of this.file) {
         if (el.email == email) {
-          return this.usersMem;
+          return el;
         }
       }
     } catch (err) {
       throw err;
     }
-    for (const el of this.usersMem) {
-      console.log(el.email);
+  };
+  getOneUserForIdDb = (id) => {
+    try {
+      for (const el of this.file) {
+        if (el._id == id) {
+          return el;
+        }
+      }
+    } catch (err) {
+      throw err;
     }
   };
-  ///////////////////////prueba
-  getOneUserForIdDb = (id) => {};
-  //////////////////////////////////////////////////Creamois User Con CARRITO en paralelo
+  createNewUserDb = async (addUser) => {
+    try {
+      let idExisting;
+      this.file.forEach((el) => {
+        idExisting = el._id;
+      });
+      addUser._id = idExisting + 1;
+      logger.log("info", addUser);
+      usersMem.push(addUser);
+      return addUser;
+    } catch (err) {
+      throw err;
+    }
+  };
 }
-ecreateNewUserDB = () => {
-  try {
-    this.usuarios.push(objectUser);
-  } catch (err) {
-    throw err;
-  }
-};
 
 module.exports = ContainerUsersMem;
