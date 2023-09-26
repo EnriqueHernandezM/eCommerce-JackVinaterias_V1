@@ -1,14 +1,13 @@
-const { usuarios } = require("../../utils/createUserParallel");
+const usersMem = require("./users");
 const logger = require("../../utils/loggers");
 const moment = require("moment");
 const timestamp = moment().format("lll");
 const carritosCompras = [];
 class ContainerCarritoMem {
   constructor() {}
-
   createOneNewTrolley = async (idMyUsuer) => {
     try {
-      const catchMyUser = usuarios.find((el) => el._id == idMyUsuer);
+      const catchMyUser = usersMem.find((el) => el._id == idMyUsuer);
       let _id = 1;
       catchMyUser.length > 0 &&
         catchMyUser.forEach((el) => {
@@ -77,7 +76,7 @@ class ContainerCarritoMem {
   };
   dataOneUser = async (idUsuario) => {
     try {
-      const userInfo = usuarios.find((el) => el._id == idUsuario);
+      const userInfo = usersMem.find((el) => el._id == idUsuario);
       return [userInfo];
     } catch (err) {
       logger.log("error", `errInMemoriPersistencia${err}`);

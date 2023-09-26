@@ -1,6 +1,7 @@
+const logger = require("../../utils/loggers");
 const moment = require("moment");
 const timestamp = moment().format("lll");
-const ordenes = [
+const orders = [
   {
     _id: "64326c12ed5eaf4b03f6772d",
     creationDate: "Apr 9, 2023 2:33 AM",
@@ -40,7 +41,7 @@ class ContainerOrdersMem {
   }
   getAllOrdersExisting = async () => {
     try {
-      const readAll = ordenes;
+      const readAll = orders;
       return readAll;
     } catch (err) {
       logger.log("error", `errIn getallrdersMongoDb${err}`);
@@ -57,17 +58,17 @@ class ContainerOrdersMem {
       const ordersToCount = await this.getAllOrdersExisting();
       let counterAcum = ordersToCount.length;
       const OneNewOrder = {
-        creationDate: timestamp, //creacion
-        order: trolleybuy, //array productos
-        totalProducts: totalItems, //total de productos
-        customerData: user, //opbjeto usuario vompleto
-        state: "creado", //stado
-        idCustomer: user._id, //id usuario
+        creationDate: timestamp,
+        order: trolleybuy,
+        totalProducts: totalItems,
+        customerData: user,
+        state: "creado",
+        idCustomer: user._id,
         numberOrder: counterAcum + 1,
-        idTrolley: user.idTrolley, //idTrolley
+        idTrolley: user.idTrolley,
         totalOrder: total,
       };
-      ordenes.push(OneNewOrder);
+      orders.push(OneNewOrder);
       return OneNewOrder;
     } catch (err) {
       logger.log("error", `errInOrdersMemDb${err}`);
@@ -77,7 +78,7 @@ class ContainerOrdersMem {
 
   getOrdersTheClient = async (idUserS) => {
     try {
-      const orders = ordenes.find((el) => el.idCustomer == idUserS);
+      const orders = orders.find((el) => el.idCustomer == idUserS);
       return [orders];
     } catch (err) {
       logger.log("error", `errInOrdersMemOrderClient${err}`);

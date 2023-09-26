@@ -13,7 +13,7 @@ const ProductoSchema = new Schema({
   data: Date,
   cantidad: { type: Number },
 });
-const Productos = model("inventario", ProductoSchema);
+const Products = model("inventario", ProductoSchema);
 
 class ContainerProductMongo {
   constructor(collection) {
@@ -22,18 +22,18 @@ class ContainerProductMongo {
   saveNewProduct = async (product, timestamp) => {
     try {
       product.data = timestamp;
-      const newProduct = new Productos(product);
+      const newProduct = new Products(product);
       return await newProduct.save().then((data) => {
         return data;
       });
     } catch (err) {
-      logger.log("error", `errIn sdaveNewProduct MongoDb${err}`);
+      logger.log("error", `errIn saveNewProduct MongoDb${err}`);
       return { error: err };
     }
   };
   getProductByIdDb = async (idNumber) => {
     try {
-      return await Productos.findById(idNumber);
+      return await Products.findById(idNumber);
     } catch (err) {
       logger.log("error", `errIn getProductById Mongodb${err}`);
       return { error: err };
@@ -41,7 +41,7 @@ class ContainerProductMongo {
   };
   getAllitemsDb = async () => {
     try {
-      const data = await Productos.find({});
+      const data = await Products.find({});
       return data;
     } catch (err) {
       logger.log("error", `errIn getAllItemsDB Mongodb${err}`);
@@ -50,7 +50,7 @@ class ContainerProductMongo {
   };
   deleteOneItemInventory = async (aBorrar) => {
     try {
-      const deletedItem = await Productos.findByIdAndDelete(aBorrar);
+      const deletedItem = await Products.findByIdAndDelete(aBorrar);
       logger.log("info", "productoEliminado");
       return deletedItem;
     } catch (err) {
@@ -59,11 +59,11 @@ class ContainerProductMongo {
   };
   modifyOneElementInventory = async (buscar, body) => {
     try {
-      const userModify = await Productos.findByIdAndUpdate(buscar.id, body, { new: true });
+      const userModify = await Products.findByIdAndUpdate(buscar.id, body, { new: true });
       return userModify;
     } catch (err) {
       logger.log("error", `errIn modifyOneElementInventory Mongodb${err}`);
     }
   };
 }
-module.exports = { ContainerProductMongo, Productos };
+module.exports = { ContainerProductMongo };

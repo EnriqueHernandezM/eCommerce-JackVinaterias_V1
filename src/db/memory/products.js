@@ -1,7 +1,6 @@
 const logger = require("../../utils/loggers");
 const moment = require("moment");
 const timestamp = moment().format("lll");
-const { usuarios } = require("../../utils/createUserParallel");
 let inventarios = [
   {
     _id: 1,
@@ -114,4 +113,4 @@ class ContainerProductMem {
   };
 }
 
-module.exports = { ContainerProductMem, inventarios };
+module.exports = { ContainerProductMem };

@@ -32,9 +32,7 @@ class ContainerCarritoFirebas {
   };
   getAllTrolley = async (idTrolley) => {
     try {
-      //llamamos esta funcion para transformar el id a email y trababjar con el
-      const userThisDb = await ContainerCarritoFirebas.transformTheUser(idTrolley);
-      const datas = await db.collection(this.collection).where("emailUser", "==", userThisDb.email).get();
+      const datas = await db.collection(this.collection).where("id", "==", idTrolley).get();
       let arrayRes = datas.docs.map((item) => {
         return item.data();
       });
@@ -90,9 +88,7 @@ class ContainerCarritoFirebas {
   };
   dataOneUser = async (idUsuario) => {
     try {
-      //al llamar la funcion de esta manera obtenemos informacion del ususario
-      const userThisDb = await ContainerCarritoFirebas.transformTheUser(null, idUsuario);
-      const datas = await db.collection("usuarios").where("email", "==", userThisDb.email).get();
+      const datas = await db.collection("usuarios").where("id", "==", idUsuario).get();
       let arrayRes = datas.docs.map((item) => {
         return { _id: item.id, ...item.data() };
       });
@@ -103,8 +99,7 @@ class ContainerCarritoFirebas {
   };
   dataOneTrolley = async (idUsuario) => {
     try {
-      const userThisDb = await ContainerCarritoFirebas.transformTheUser(idUsuario);
-      const datas = await db.collection(this.collection).where("emailUser", "==", userThisDb.email).get();
+      const datas = await db.collection(this.collection).where("id", "==", idUsuario).get();
       let trolley;
       datas.docs.forEach((el) => {
         trolley = { _id: el.id, ...el.data() };
@@ -114,9 +109,6 @@ class ContainerCarritoFirebas {
       logger.log("error", `errInDataTroleyFB${err}`);
     }
   };
-  /* Ya que solo pudimos usar passport con MD desde el controlador nos manda el id user de mongo
-  aqui se recibe u manda la informacion de usuario para poder usarla con en firebas con el correo
-  que de igual manera no se puede repetir */
 
   static transformTheUser = async (forTrolley, forUser) => {
     try {

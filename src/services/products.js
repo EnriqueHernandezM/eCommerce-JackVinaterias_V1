@@ -13,10 +13,10 @@ class ContainerProducts {
       const items = await DaoProducts.saveNewProduct(product, timestamp);
       return { _id: items._id };
     } catch (err) {
-      logger.log("error", `Error en negocio/productos${err}`);
-      return { error: `Error en negocio/productos${err}` };
+      logger.log("error", `Error in services/products${err}`);
+      return { error: `Error in services/products${err}` };
     }
-  } /*  */
+  }
   async getById(number) {
     try {
       const datasRecived = await DaoProducts.getProductByIdDb(number);
@@ -25,27 +25,24 @@ class ContainerProducts {
       }
       return datasRecived;
     } catch (err) {
-      logger.log("error", `Error en productos Negocio${err}`);
+      logger.log("error", `Error in service products${err}`);
     }
   }
-  //funcionando
   async getAll() {
     try {
       return await DaoProducts.getAllitemsDb();
     } catch (err) {
-      logger.log("error", `${err}`);
+      logger.log("error", `error in services getall${err}`);
       return { error: err };
     }
   }
-  //funcionando revzar return
   async deleteById(aBorrar) {
     try {
       return await DaoProducts.deleteOneItemInventory(aBorrar);
     } catch (err) {
-      logger.log("error", `ErrorEnNegociodeleteById${err}`);
+      logger.log("error", `Error in service deleteById${err}`);
     }
   }
-  //funcionand
   async modifyElement(id, body) {
     try {
       ContainerProducts.checkProduct(body);
@@ -53,10 +50,9 @@ class ContainerProducts {
       return await DaoProducts.modifyOneElementInventory(catchProductToModific, body);
     } catch (err) {
       logger.log("error", `${err}`);
-      return { error: `Error en negocio/productos${err}` };
+      return { error: `err in service modifyElement${err}` };
     }
   }
-
   static checkProduct(product) {
     try {
       ContainerProducts.validar(product);

@@ -9,7 +9,7 @@ class ContainerUsersFirebas {
     try {
       const datas = await db.collection(this.collection).where("email", "==", email).limit(1).get();
       const oneUser = datas.docs.map((el) => {
-        return el.data();
+        return { _id: el.id, ...el.data() };
       });
       return oneUser[0] || null;
     } catch (err) {
@@ -19,7 +19,7 @@ class ContainerUsersFirebas {
   getOneUserForIdDb = async (id) => {
     try {
       const datas = await db.collection(this.collection).doc(id).get();
-      return datas.data();
+      return { _id: datas.id, ...datas.data() };
     } catch (err) {
       throw err;
     }

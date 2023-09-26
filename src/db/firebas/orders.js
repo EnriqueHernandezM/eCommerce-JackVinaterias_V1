@@ -1,5 +1,4 @@
 const logger = require("../../utils/loggers");
-const { Users } = require("../mongoose/users");
 const { getFirestore } = require("firebase-admin/firestore");
 require("../../utils/databasConecctions/firebas");
 const db = getFirestore();
@@ -31,23 +30,22 @@ class ContainerOrdersFirebas {
       const ordersToCount = await this.getAllOrdersExisting();
       let counterAcum = ordersToCount.length;
       const newOrder = await db.collection(this.collection).add({
-        creationDate: timestamp, //creacion
-        order: trolleybuy, //array productos
-        totalProducts: totalItems, //total de productos
-        customerData: user, //opbjeto usuario vompleto
-        state: "creado", //stado
-        idCustomer: user._id, //id usuario
+        creationDate: timestamp,
+        order: trolleybuy,
+        totalProducts: totalItems,
+        customerData: user,
+        state: "creado",
+        idCustomer: user._id,
         numberOrder: counterAcum + 1,
-        idTrolley: user.idTrolley, //idTrolley
+        idTrolley: user.idTrolley,
         totalOrder: total,
       });
-      let dtaNew = await db.collection("ordenes").doc(newOrder.id).get(); //me retorna el primer carrito que tenga el idUser
+      let dtaNew = await db.collection("ordenes").doc(newOrder.id).get();
       await db
         .collection("carritoscompras")
         .doc(user.idTrolley)
         .delete()
         .then(function () {
-          //eliminamos el carrito para que no se repita ah la hora de hacer add al carrito
           logger.log("info", "carrito eliminado ");
         });
       return dtaNew.data();
@@ -57,18 +55,9 @@ class ContainerOrdersFirebas {
     }
   };
   getOrdersTheClient = async (idUserS) => {
-    let emailUser = await ContainerOrdersFirebas.transformTheUserForOrders(idUserS);
     const readAll = await this.getAllOrdersExisting();
-    const yourOrders = readAll.filter((el) => el.customerData.email === emailUser.email);
+    const yourOrders = readAll.filter((el) => el.customerData.email === idUserS);
     return yourOrders;
-  };
-  static transformTheUserForOrders = async (idCustomer) => {
-    try {
-      const user = await Users.findById(idCustomer);
-      return user;
-    } catch (err) {
-      logger.log("error", `errInTroleyFBTransFormUser${err}`);
-    }
   };
 }
 module.exports = ContainerOrdersFirebas;

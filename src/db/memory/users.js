@@ -54,5 +54,5 @@ class ContainerUsersMem {
     }
   };
 }
-
+module.exports = usersMem;
 module.exports = ContainerUsersMem;
