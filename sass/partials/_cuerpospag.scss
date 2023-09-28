@@ -89,24 +89,65 @@
   }
 }
 
-#probandoAct {
+#interfaceRenderItems {
   display: flex;
   flex-direction: row;
-  width: 80vw;
   margin: auto;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  div {
+  @include adaptablePaginaCel {
+    width: 95vw;
+  }
+  @include adaptablePaginaTablet {
+    width: 80vw;
+  }
+  @include adaptablePagina {
+    width: 80vw;
+  }
+  #cardOneItem {
+    box-shadow: 1px 3px 3px 3px rgb(12, 12, 12);
+    border-radius: 10px;
+    @include adaptablePaginaCel {
+      width: 50%;
+    }
+    @include adaptablePaginaTablet {
+      width: 20%;
+    }
+    @include adaptablePagina {
+      width: 30%;
+    }
     text-align: center;
+
     p {
-      font-size: 1.25rem;
+      margin: 6px;
+      @include adaptablePaginaCel {
+        font-size: 1rem;
+      }
+      @include adaptablePagina {
+        font-size: 1.15rem;
+      }
     }
     img {
-      width: 14rem;
-      height: 14rem;
+      @include adaptablePaginaCel {
+        width: 70%;
+        height: 8rem;
+      }
+      @include adaptablePagina {
+        width: 55%;
+        height: 12rem;
+      }
     }
-    span {
-      cursor: pointer;
+    .butonsItem {
+      display: flex;
+      flex-direction: column;
+      span {
+        cursor: pointer;
+        @include adaptablePaginaCel {
+        }
+        @include adaptablePagina {
+          font-size: 1.25rem;
+        }
+      }
     }
   }
 }

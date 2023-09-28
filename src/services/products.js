@@ -3,6 +3,7 @@ const logger = require("../utils/loggers");
 const moment = require("moment");
 const timestamp = moment().format("lll");
 const { DaoProducts } = require("../db/daos/indexDaos");
+const { log } = require("winston");
 class ContainerProducts {
   constructor(routPersistance) {
     this.routPersistance = routPersistance;

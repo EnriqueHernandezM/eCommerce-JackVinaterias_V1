@@ -15,17 +15,19 @@
         </ul>
       </div>
       <h2 class="p-5 text-center">productos disponibles</h2>
-      <div id="probandoAct">
+      <div id="interfaceRenderItems">
         <div id="renderCantItems"></div>
         <%allItems.forEach((el) => { %>
-        <div class="mt-5 pt-2">
+        <div id="cardOneItem" class="mt-2 pt-2">
           <img class="rounded" src="<%=el.image%>" alt="imagen de un producto en carrioto" />
           <p><%=el.product%></p>
           <p>$ <%=el.price%></p>
+        <div class="butonsItem">
           <span onclick="renderCantItemsF('<%=el._id||el.id%>')"> agregar al 🛒 </span>
           <span onclick="deleteElement('<%=el._id||el.id%>')">borrar 🗑️ </span>
           <% const x = JSON.stringify(el)%>
           <span onclick="renderFormActProduct('<%=x%>')"> Actualizar item 🔃</span>
+        </div>
         </div>
         <%})%>
       </div>

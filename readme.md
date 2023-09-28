@@ -10,7 +10,6 @@ http://jackvinateriasv1-env.eba-mxwwsges.us-east-1.elasticbeanstalk.com/
 
 > La aplicacion esta desarrollada con una arquitectura en capas con la finalidad de poder usar y agregar
 > distintas bases de datos sin afectar la logica de todo el proyecto.
-> Ademas de estar Sincronizada entre las 2 persistencias para que sirva como respaldo en las cuentas existentes.
 
 ## Ejecutar App en local 🔧
 
@@ -42,7 +41,7 @@ Produccion con Firebas:
 b) npm run devFirebas
 ```
 
-Desarrolo con memoria !!solo funciona con cuenta Admin:
+Desarrollo con memoria !!solo funciona con cuenta Admin:
 
 ```sh
 c) npm run devMem
@@ -73,8 +72,6 @@ c) npm run dev memJson
 
 ```sh
 !!SOlo con cuenta de Admin, Ademas podras
-correo: quique166sb1@hotmail.com
-contraseña: 260199
 6.- Agregar Productos a inventario
 7.- Editar productos
 8.- Eliminar productos

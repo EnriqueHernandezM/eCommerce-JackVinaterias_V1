@@ -12,3 +12,5 @@
 {"level":"warn","message":"User Not Found with emailquique166sb1@hotmail.com","timestamp":"2023-09-25T00:18:43.835Z"}
 {"err":"ruta inexistente","level":"warn","method":{"get":true},"route":"/favicon.ico","timestamp":"2023-09-27T00:04:22.456Z"}
 {"err":"ruta inexistente","level":"warn","method":{"get":true},"route":"/favicon.ico","timestamp":"2023-09-28T00:30:30.178Z"}
+{"err":"ruta inexistente","level":"warn","method":{"get":true},"route":"/favicon.ico","timestamp":"2023-09-28T19:03:10.817Z"}
+{"err":"ruta inexistente","level":"warn","method":{"get":true},"route":"/favicon.ico","timestamp":"2023-09-28T19:50:05.315Z"}

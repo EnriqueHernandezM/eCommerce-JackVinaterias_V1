@@ -16,7 +16,7 @@ body {
 }
 #boxMsges {
   border-radius: 5px;
-  background-color: rgba(132, 135, 107, 0.437);
+  background: linear-gradient(45deg, rgb(107, 107, 108), rgb(91, 97, 70), rgb(45, 45, 61));
   padding: 1rem;
   width: 78vw;
   margin-left: 1.25rem;
@@ -47,21 +47,6 @@ body {
   font-size: 0.75rem;
 }
 
-#boxMsges::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, rgb(45, 45, 61), rgb(71, 50, 50), rgb(91, 97, 70), rgb(12, 12, 18), black);
-  background-size: 400%;
-  border-radius: 10px;
-  filter: blur(5px);
-  animation: glow s ease-in infinite;
-}
-
 form {
   display: flex;
   flex-direction: row;
@@ -89,8 +74,7 @@ form .containerBtonChat .bEnv {
   margin-top: 0.75rem;
   height: 40px;
   width: 75px;
-  background: rgb(0, 0, 0);
-  color: rgb(189, 242, 226);
+  color: rgb(0, 0, 0);
   position: relative;
 }
 form .containerBtonChat .bEnv::before {
@@ -102,7 +86,7 @@ form .containerBtonChat .bEnv::before {
   width: 100%;
   height: 100%;
   background: linear-gradient(45deg, rgb(40, 232, 203), blue, rgb(255, 105, 185), blue, black, rgb(21, 229, 226), blue, rgb(129, 58, 250), blue, black);
-  background-size: 400%;
+  background-size: 500%;
   border-radius: 10px;
   filter: blur(5px);
   animation: glow 20s linear infinite;
@@ -220,26 +204,84 @@ form .containerBtonChat .bEnv::before {
     opacity: 0;
   }
 }
-#probandoAct {
+#interfaceRenderItems {
   display: flex;
   flex-direction: row;
-  width: 80vw;
   margin: auto;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-#probandoAct div {
+@media screen and (min-width: 360px) {
+  #interfaceRenderItems {
+    width: 95vw;
+  }
+}
+@media screen and (min-width: 576px) {
+  #interfaceRenderItems {
+    width: 80vw;
+  }
+}
+@media screen and (min-width: 992px) {
+  #interfaceRenderItems {
+    width: 80vw;
+  }
+}
+#interfaceRenderItems #cardOneItem {
+  box-shadow: 1px 3px 3px 3px rgb(12, 12, 12);
+  border-radius: 10px;
   text-align: center;
 }
-#probandoAct div p {
-  font-size: 1.25rem;
+@media screen and (min-width: 360px) {
+  #interfaceRenderItems #cardOneItem {
+    width: 50%;
+  }
 }
-#probandoAct div img {
-  width: 14rem;
-  height: 14rem;
+@media screen and (min-width: 576px) {
+  #interfaceRenderItems #cardOneItem {
+    width: 20%;
+  }
 }
-#probandoAct div span {
+@media screen and (min-width: 992px) {
+  #interfaceRenderItems #cardOneItem {
+    width: 30%;
+  }
+}
+#interfaceRenderItems #cardOneItem p {
+  margin: 6px;
+}
+@media screen and (min-width: 360px) {
+  #interfaceRenderItems #cardOneItem p {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  #interfaceRenderItems #cardOneItem p {
+    font-size: 1.15rem;
+  }
+}
+@media screen and (min-width: 360px) {
+  #interfaceRenderItems #cardOneItem img {
+    width: 70%;
+    height: 8rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  #interfaceRenderItems #cardOneItem img {
+    width: 55%;
+    height: 12rem;
+  }
+}
+#interfaceRenderItems #cardOneItem .butonsItem {
+  display: flex;
+  flex-direction: column;
+}
+#interfaceRenderItems #cardOneItem .butonsItem span {
   cursor: pointer;
+}
+@media screen and (min-width: 992px) {
+  #interfaceRenderItems #cardOneItem .butonsItem span {
+    font-size: 1.25rem;
+  }
 }
 
 .imgchat {
