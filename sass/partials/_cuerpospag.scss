@@ -171,8 +171,20 @@
   border-top: double 0.5rem #baab8f;
 }
 .totalCarrito {
-  margin-left: 59%;
   margin-bottom: 2rem;
+
+  @include adaptablePaginaCel {
+    margin-left: 2%;
+  }
+  @include adaptablePagina {
+    margin-left: auto;
+  }
+  @include adaptablePaginaTablet {
+    margin-left: 25%;
+  }
+  @include adaptablePagina {
+    margin-left: 59%;
+  }
   ul {
     display: flex;
     flex-direction: row;

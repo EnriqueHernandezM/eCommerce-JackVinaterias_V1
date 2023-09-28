@@ -27,7 +27,7 @@ class ControllerProducts {
     try {
       logger.log("info", { route: req.originalUrl, method: req.route.methods });
       const allItemsGet = await containerProducts.getAll();
-      containerMessages.infoUserToChat(req.user);
+      await containerMessages.infoUserToChat(req.user);
       switch (environmentVars.typeInRes) {
         case "resJson":
           res.status(200).json({ inventario: allItemsGet });

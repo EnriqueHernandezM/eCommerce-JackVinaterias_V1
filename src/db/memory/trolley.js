@@ -1,4 +1,5 @@
-const usersMem = require("./users");
+const { usersMem } = require("./users");
+
 const logger = require("../../utils/loggers");
 const moment = require("moment");
 const timestamp = moment().format("lll");

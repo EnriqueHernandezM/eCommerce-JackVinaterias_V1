@@ -332,10 +332,8 @@ const deleteItemTrolley = (idItem) => {
 //funcion para enviar mensaje
 const enviarMsg = () => {
   const msgeParaEnviar = document.getElementById("inputMsg").value;
-  const aliasUser = document.getElementById("alias").value;
   socket.emit("msg", {
     text: msgeParaEnviar,
-    alias: aliasUser,
   });
 };
 socket.on("connect", () => {
@@ -349,14 +347,11 @@ socket.on("listaMsgs", (data) => {
   const denormalizedCount = document.getElementById("desnormalizados");
   //////DESNORMALIZAMOS
   const denormalized = denormalize(data.result, messageSchemaOk, data.entities);
-  normalizedCount.innerHTML = JSON.stringify(data).length;
-  denormalizedCount.innerHTML = JSON.stringify(denormalized).length;
   denormalized.forEach((el) => {
     html += `
     <div>
-      <p class="user"> <img class="imgchat" src="${el.author.avatar}" alt="">User: ${el.author.idmail} dice: </p>
-      <p class="mensaje" > ${el.text} </p>
-
+      <p class="user"> <img class="imgchat" src="${el.author.avatar}" alt=""> ${el.author.idmail} dice: </p>
+      <p class="mensaje"> ${el.text} </p>
     </div>
     `;
   });

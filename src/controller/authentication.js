@@ -87,9 +87,9 @@ class ControllerAuthentication {
     try {
       logger.log("info", { route: req.path, method: req.route.methods });
       if (req.isAuthenticated()) {
-        res.status(202).res.render("pages/crearCuenta", {});
-      } else if (!req.isAuthenticated()) {
         this.getLogIn(req, res);
+      } else if (!req.isAuthenticated()) {
+        res.status(202).render("pages/crearCuenta", {});
       }
     } catch (err) {
       logger.log("error", `error in getCreateAcount controller${err}`);

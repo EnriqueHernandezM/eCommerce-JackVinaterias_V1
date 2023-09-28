@@ -1,4 +1,4 @@
-const ContainerUsersMem = require("../../memory/users");
+const { ContainerUsersMem } = require("../../memory/users");
 
 class UsersDaoMem extends ContainerUsersMem {
   constructor() {

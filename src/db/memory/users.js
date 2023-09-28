@@ -5,9 +5,21 @@ const usersMem = [
     email: "quique166sb1@hotmail.com",
     password: "$2b$10$hdMQHkjQhybrI64B1j73K.gjroU6GJr.XPpAq9bLgZbFxzyQj7AzC",
     nombre: "Enrique",
-    edad: "88",
+    edad: "24",
     direccion: "And. tecamac 2",
     telefono: "5613507622",
+    avatar:
+      "https://static.nike.com/a/images/w_1920,c_limit/73a6ec94-cea8-49b1-9838-b70cee0c042f/c%C3%B3mo-practicar-skateboarding-para-principiantes.jpg",
+    idTrolley: "f",
+  },
+  {
+    _id: "2",
+    email: "quique123231@hotmail.com",
+    password: "$2b$10$hdMQHkjQhybrI64B1j73K.gjroU6GJr.XPpAq9bLgZbFxzyQj7Az",
+    nombre: "Alberto",
+    edad: "23",
+    direccion: "coyoacan 13",
+    telefono: "5650443321",
     avatar:
       "https://static.nike.com/a/images/w_1920,c_limit/73a6ec94-cea8-49b1-9838-b70cee0c042f/c%C3%B3mo-practicar-skateboarding-para-principiantes.jpg",
     idTrolley: "f",
@@ -54,5 +66,5 @@ class ContainerUsersMem {
     }
   };
 }
-module.exports = usersMem;
-module.exports = ContainerUsersMem;
+
+module.exports = { ContainerUsersMem, usersMem };

@@ -29,7 +29,7 @@ const orders = [
     },
     state: "creado",
     idTrolley: "64326b1aed5eaf4b03f6770a",
-    idCustomer: "642ca609ffc507b352621f49",
+    idCustomer: "1",
     numberOrder: 1,
     totalOrder: 2275,
   },
@@ -44,7 +44,7 @@ class ContainerOrdersMem {
       const readAll = orders;
       return readAll;
     } catch (err) {
-      logger.log("error", `errIn getallrdersMongoDb${err}`);
+      logger.log("error", `errIn getallrders Mem${err}`);
       return { error: err };
     }
   };
@@ -78,8 +78,8 @@ class ContainerOrdersMem {
 
   getOrdersTheClient = async (idUserS) => {
     try {
-      const orders = orders.find((el) => el.idCustomer == idUserS);
-      return [orders];
+      const ordersExist = orders.find((el) => el.idCustomer == idUserS);
+      return [ordersExist];
     } catch (err) {
       logger.log("error", `errInOrdersMemOrderClient${err}`);
     }

@@ -53,7 +53,6 @@ class ContainerMessages {
   normalizarMsges(msgRec) {
     try {
       const normalizarOk = normalize(msgRec, messageSchemaOk);
-      // logger.log("info", `${JSON.stringify(normalizarOk, null, 4)}`);
       return normalizarOk;
     } catch (err) {
       logger.log("error", `${err}`);
