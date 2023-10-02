@@ -3,11 +3,11 @@
   <head>
     <%- include('../partials/head'); %>
   </head>
-  <body class="bg-dark text-white" onload="mostrarRegreso()">
+  <body class="text-white" onload="mostrarRegreso()">
     <%- include('../partials/navbar'); %>
     <div id="acceso">
       <h1>Jack Vinaterias</h1>
-      <label for="entradaEdad">Este es un sitio solo para mayores de edad : </label>
+      <label for="entradaEdad">Hola queremos conocerte, cual es tu edad? </label>
       <input type="number" id="entradaEdad" placeholder="edad" min="1" max="111" required />
       <button type="button" onclick="respuesta()">Enviar</button>
     </div>

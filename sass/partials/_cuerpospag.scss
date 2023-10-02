@@ -1,9 +1,10 @@
 #acceso {
+  border-radius: 25px;
   h1 {
     font-size: 5.5rem;
     @include adaptablePagina {
       font-size: 5.5rem;
-      padding: 5rem;
+      padding: 2rem;
     }
   }
   display: flex;
@@ -17,40 +18,52 @@
   animation-name: desaparece;
   animation-duration: 10s;
   animation-delay: 1s;
-  color: rgb(255, 219, 136);
-  font-family: "Trebuchet MS";
+  color: rgb(169, 160, 117);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: 400;
-  background-color: rgba(38, 51, 51, 0.875);
+  background-color: rgba(29, 36, 38, 0.794);
   height: 130vh;
   @include adaptablePagina {
-    background-color: rgba(38, 51, 51, 0.875);
     padding: 3rem;
     height: 182vh;
   }
   label {
-    padding-top: 15rem;
-    font-size: 1rem;
+    padding-top: 6rem;
+    font-size: 2rem;
     @include adaptablePagina {
       font-size: 2rem;
-      padding: 10rem 0rem 7.5rem 0rem;
+      padding: 7rem 0rem 7.5rem 0rem;
     }
   }
   input {
+    border: none;
+    border-radius: 7px;
     height: 2rem;
-    border-radius: 5%;
     width: 7rem;
+    box-shadow: 1px 1px 2px 1px;
+    background-color: rgb(54, 55, 55);
+    padding-left: 35px;
     @include adaptablePagina {
       height: 2rem;
-      border-radius: 5%;
       width: 8rem;
       margin: 0.25rem;
     }
   }
   button {
-    border-radius: 5%;
-    height: 2rem;
-    width: 5rem;
+    border-radius: 9px;
     margin: 0.75rem;
+    position: relative;
+    border: none;
+    margin-left: 0.5rem;
+    margin-top: 0.75rem;
+    height: 40px;
+    width: 75px;
+    font-size: 0.95rem;
+    color: rgb(255, 255, 255);
+    background-color: rgb(14, 14, 14);
+  }
+  button::before {
+    @include configBeforeButton;
   }
 }
 #anuncioEntrada {
@@ -99,19 +112,19 @@
     width: 95vw;
   }
   @include adaptablePaginaTablet {
-    width: 80vw;
+    width: 85vw;
   }
   @include adaptablePagina {
     width: 80vw;
   }
   #cardOneItem {
-    box-shadow: 1px 3px 3px 3px rgb(12, 12, 12);
+    box-shadow: 1px 1px 3px 3px rgb(26, 26, 26);
     border-radius: 10px;
     @include adaptablePaginaCel {
-      width: 50%;
+      width: 47%;
     }
     @include adaptablePaginaTablet {
-      width: 20%;
+      width: 28%;
     }
     @include adaptablePagina {
       width: 30%;
@@ -128,6 +141,7 @@
       }
     }
     img {
+      padding: 1px;
       @include adaptablePaginaCel {
         width: 70%;
         height: 8rem;
@@ -146,6 +160,10 @@
         }
         @include adaptablePagina {
           font-size: 1.25rem;
+        }
+        a {
+          text-decoration: none;
+          color: rgb(255, 255, 255);
         }
       }
     }
@@ -168,7 +186,7 @@
       margin-right: 5.5rem;
     }
     a:hover {
-      color: #a9a075;
+      color: rgb(169, 160, 117);
     }
   }
 }
@@ -208,9 +226,7 @@
     }
   }
 }
-#footer {
-  border-top: double 0.5rem #baab8f;
-}
+
 .totalCarrito {
   margin-bottom: 2rem;
 
@@ -259,19 +275,19 @@
       a {
         font-size: 1.5rem;
         text-decoration: none;
-        color: aliceblue;
+        color: rgb(240, 248, 255);
         padding: 0.25rem;
       }
       a:hover {
-        color: #a9a075;
+        color: rgb(169, 160, 117);
       }
       button {
         display: inline-block;
         font-size: 1.15rem;
         border-radius: 7%;
         padding: 0.15rem;
-        color: #ffffff;
-        background-color: rgb(41, 41, 41);
+        color: rgb(255, 255, 255);
+        background-color: rgb(14, 14, 14);
         border: none;
       }
       button:hover {
@@ -282,12 +298,66 @@
 }
 
 #renderCantItems {
-  background-color: #a9a075;
+  background-color: rgba(42, 42, 42, 0.937);
   position: fixed;
-  border-radius: 3%;
-
-  h3 {
-    padding: 2rem;
+  border-radius: 5px;
+  @include adaptablePaginaCel {
+    width: 90%;
+  }
+  @include adaptablePaginaTablet {
+    width: 80%;
+  }
+  @include adaptablePagina {
+    width: 30%;
+  }
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    input {
+      color: rgb(255, 255, 255);
+      text-align: center;
+      width: 18%;
+      border: none;
+      border-radius: 5px;
+      background-color: rgb(54, 55, 55);
+      border-bottom: 1px solid rgb(186, 171, 143);
+    }
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+    input:focus {
+      border-color: rgb(186, 171, 143);
+      box-shadow: 0 0 8px rgb(186, 171, 143);
+      color: rgb(255, 255, 255);
+    }
+    h3 {
+      padding: 0.5rem;
+    }
+  }
+  .containerButtonLoggin {
+    .butonLogin {
+      margin: 1rem;
+      position: relative;
+      border: none;
+      border-radius: 9px;
+      line-height: 1;
+      margin-left: 0.5rem;
+      margin-top: 0.75rem;
+      height: 40px;
+      width: 75px;
+      font-size: 0.95rem;
+      color: rgb(255, 255, 255);
+      background-color: rgb(14, 14, 14);
+    }
+    .butonLogin::before {
+      @include configBeforeButton;
+    }
   }
 }
 #contenedorForOrder {
@@ -295,5 +365,5 @@
   margin-top: 2.75rem;
   margin-left: auto;
   margin-right: auto;
-  border-bottom: double 0.5rem #baab8f;
+  border-bottom: double 0.5rem rgb(187, 172, 144);
 }

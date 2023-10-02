@@ -1,0 +1,40 @@
+@mixin configBeforeButton {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 94%;
+  height: 90%;
+  background: linear-gradient(
+    45deg,
+    rgb(40, 232, 203),
+    blue,
+    rgb(255, 105, 185),
+    blue,
+    black,
+    rgb(21, 229, 226),
+    blue,
+    rgb(129, 58, 250),
+    blue,
+    black
+  );
+  background-size: 500%;
+  border-radius: 10px;
+  filter: blur(5px);
+  animation: glow 20s linear infinite;
+}
+@mixin keyFramesGlow {
+  @keyframes glow {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      display: none;
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+}

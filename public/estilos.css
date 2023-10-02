@@ -8,12 +8,37 @@ body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 1.25rem;
   background: rgb(14, 14, 14);
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
+.navbar {
+  border-bottom: 1px solid rgb(42, 42, 42);
+}
 .navbar div h1 a {
   font-size: 100%;
 }
+.navbar div #formSearch #inputSearch {
+  border: none;
+  border-bottom: 3px solid rgb(186, 171, 143);
+  font-size: 17px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(14, 14, 14);
+}
+.navbar div #formSearch #inputSearch:focus {
+  border-color: rgb(186, 171, 143);
+  box-shadow: 0 0 8px rgb(186, 171, 143);
+  color: rgb(255, 255, 255);
+}
+.navbar div #formSearch .buttonSearch {
+  color: rgb(250, 247, 247);
+  border: none;
+  font-size: 1.15rem;
+}
+.navbar div #formSearch .buttonSearch:hover {
+  color: rgb(169, 160, 117);
+  background-color: rgba(0, 0, 0, 0);
+}
+
 #boxMsges {
   border-radius: 5px;
   background: linear-gradient(45deg, rgb(107, 107, 108), rgb(91, 97, 70), rgb(45, 45, 61));
@@ -59,22 +84,26 @@ form #inputEmail {
   margin-bottom: 2rem;
 }
 form #inputMsg {
+  padding-left: 1rem;
+  padding-top: 0.5rem;
   border: none;
   border-radius: 7px;
   width: 35vw;
-  background-color: rgb(226, 213, 195);
+  background-color: rgba(174, 166, 154, 0.447);
 }
 form .containerBtonChat {
   display: flex;
   flex-direction: row-reverse;
 }
 form .containerBtonChat .bEnv {
+  border: none;
   border-radius: 7px;
   margin-left: 0.5rem;
   margin-top: 0.75rem;
   height: 40px;
   width: 75px;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  background-color: rgb(14, 14, 14);
   position: relative;
 }
 form .containerBtonChat .bEnv::before {
@@ -83,8 +112,8 @@ form .containerBtonChat .bEnv::before {
   z-index: -1;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 94%;
+  height: 90%;
   background: linear-gradient(45deg, rgb(40, 232, 203), blue, rgb(255, 105, 185), blue, black, rgb(21, 229, 226), blue, rgb(129, 58, 250), blue, black);
   background-size: 500%;
   border-radius: 10px;
@@ -105,6 +134,7 @@ form .containerBtonChat .bEnv::before {
 }
 
 #acceso {
+  border-radius: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -116,10 +146,10 @@ form .containerBtonChat .bEnv::before {
   animation-name: desaparece;
   animation-duration: 10s;
   animation-delay: 1s;
-  color: rgb(255, 219, 136);
-  font-family: "Trebuchet MS";
+  color: rgb(169, 160, 117);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: 400;
-  background-color: rgba(38, 51, 51, 0.875);
+  background-color: rgba(29, 36, 38, 0.794);
   height: 130vh;
 }
 #acceso h1 {
@@ -128,44 +158,67 @@ form .containerBtonChat .bEnv::before {
 @media screen and (min-width: 992px) {
   #acceso h1 {
     font-size: 5.5rem;
-    padding: 5rem;
+    padding: 2rem;
   }
 }
 @media screen and (min-width: 992px) {
   #acceso {
-    background-color: rgba(38, 51, 51, 0.875);
     padding: 3rem;
     height: 182vh;
   }
 }
 #acceso label {
-  padding-top: 15rem;
-  font-size: 1rem;
+  padding-top: 6rem;
+  font-size: 2rem;
 }
 @media screen and (min-width: 992px) {
   #acceso label {
     font-size: 2rem;
-    padding: 10rem 0rem 7.5rem 0rem;
+    padding: 7rem 0rem 7.5rem 0rem;
   }
 }
 #acceso input {
+  border: none;
+  border-radius: 7px;
   height: 2rem;
-  border-radius: 5%;
   width: 7rem;
+  box-shadow: 1px 1px 2px 1px;
+  background-color: rgb(54, 55, 55);
+  padding-left: 35px;
 }
 @media screen and (min-width: 992px) {
   #acceso input {
     height: 2rem;
-    border-radius: 5%;
     width: 8rem;
     margin: 0.25rem;
   }
 }
 #acceso button {
-  border-radius: 5%;
-  height: 2rem;
-  width: 5rem;
+  border-radius: 9px;
   margin: 0.75rem;
+  position: relative;
+  border: none;
+  margin-left: 0.5rem;
+  margin-top: 0.75rem;
+  height: 40px;
+  width: 75px;
+  font-size: 0.95rem;
+  color: rgb(255, 255, 255);
+  background-color: rgb(14, 14, 14);
+}
+#acceso button::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 94%;
+  height: 90%;
+  background: linear-gradient(45deg, rgb(40, 232, 203), blue, rgb(255, 105, 185), blue, black, rgb(21, 229, 226), blue, rgb(129, 58, 250), blue, black);
+  background-size: 500%;
+  border-radius: 10px;
+  filter: blur(5px);
+  animation: glow 20s linear infinite;
 }
 
 #anuncioEntrada {
@@ -218,7 +271,7 @@ form .containerBtonChat .bEnv::before {
 }
 @media screen and (min-width: 576px) {
   #interfaceRenderItems {
-    width: 80vw;
+    width: 85vw;
   }
 }
 @media screen and (min-width: 992px) {
@@ -227,18 +280,18 @@ form .containerBtonChat .bEnv::before {
   }
 }
 #interfaceRenderItems #cardOneItem {
-  box-shadow: 1px 3px 3px 3px rgb(12, 12, 12);
+  box-shadow: 1px 1px 3px 3px rgb(26, 26, 26);
   border-radius: 10px;
   text-align: center;
 }
 @media screen and (min-width: 360px) {
   #interfaceRenderItems #cardOneItem {
-    width: 50%;
+    width: 47%;
   }
 }
 @media screen and (min-width: 576px) {
   #interfaceRenderItems #cardOneItem {
-    width: 20%;
+    width: 28%;
   }
 }
 @media screen and (min-width: 992px) {
@@ -258,6 +311,9 @@ form .containerBtonChat .bEnv::before {
   #interfaceRenderItems #cardOneItem p {
     font-size: 1.15rem;
   }
+}
+#interfaceRenderItems #cardOneItem img {
+  padding: 1px;
 }
 @media screen and (min-width: 360px) {
   #interfaceRenderItems #cardOneItem img {
@@ -283,6 +339,10 @@ form .containerBtonChat .bEnv::before {
     font-size: 1.25rem;
   }
 }
+#interfaceRenderItems #cardOneItem .butonsItem span a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
 
 .imgchat {
   width: 3.5rem;
@@ -301,7 +361,7 @@ form .containerBtonChat .bEnv::before {
   margin-right: 5.5rem;
 }
 .butomCrearCuenta div a:hover {
-  color: #a9a075;
+  color: rgb(169, 160, 117);
 }
 
 .titleLogin div h1 {
@@ -330,10 +390,6 @@ form .containerBtonChat .bEnv::before {
 }
 .vistaPerfil .botonOut a:hover {
   color: #a9a075;
-}
-
-#footer {
-  border-top: double 0.5rem #baab8f;
 }
 
 .totalCarrito {
@@ -393,19 +449,19 @@ form .containerBtonChat .bEnv::before {
 .logoVerCarrito ul li a {
   font-size: 1.5rem;
   text-decoration: none;
-  color: aliceblue;
+  color: rgb(240, 248, 255);
   padding: 0.25rem;
 }
 .logoVerCarrito ul li a:hover {
-  color: #a9a075;
+  color: rgb(169, 160, 117);
 }
 .logoVerCarrito ul li button {
   display: inline-block;
   font-size: 1.15rem;
   border-radius: 7%;
   padding: 0.15rem;
-  color: #ffffff;
-  background-color: rgb(41, 41, 41);
+  color: rgb(255, 255, 255);
+  background-color: rgb(14, 14, 14);
   border: none;
 }
 .logoVerCarrito ul li button:hover {
@@ -413,12 +469,82 @@ form .containerBtonChat .bEnv::before {
 }
 
 #renderCantItems {
-  background-color: #a9a075;
+  background-color: rgba(42, 42, 42, 0.937);
   position: fixed;
-  border-radius: 3%;
+  border-radius: 5px;
 }
-#renderCantItems h3 {
-  padding: 2rem;
+@media screen and (min-width: 360px) {
+  #renderCantItems {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 576px) {
+  #renderCantItems {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 992px) {
+  #renderCantItems {
+    width: 30%;
+  }
+}
+#renderCantItems div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#renderCantItems div input {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  width: 18%;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(54, 55, 55);
+  border-bottom: 1px solid rgb(186, 171, 143);
+}
+#renderCantItems div input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#renderCantItems div input[type=number] {
+  -moz-appearance: textfield;
+}
+#renderCantItems div input:focus {
+  border-color: rgb(186, 171, 143);
+  box-shadow: 0 0 8px rgb(186, 171, 143);
+  color: rgb(255, 255, 255);
+}
+#renderCantItems div h3 {
+  padding: 0.5rem;
+}
+#renderCantItems .containerButtonLoggin .butonLogin {
+  margin: 1rem;
+  position: relative;
+  border: none;
+  border-radius: 9px;
+  line-height: 1;
+  margin-left: 0.5rem;
+  margin-top: 0.75rem;
+  height: 40px;
+  width: 75px;
+  font-size: 0.95rem;
+  color: rgb(255, 255, 255);
+  background-color: rgb(14, 14, 14);
+}
+#renderCantItems .containerButtonLoggin .butonLogin::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 94%;
+  height: 90%;
+  background: linear-gradient(45deg, rgb(40, 232, 203), blue, rgb(255, 105, 185), blue, black, rgb(21, 229, 226), blue, rgb(129, 58, 250), blue, black);
+  background-size: 500%;
+  border-radius: 10px;
+  filter: blur(5px);
+  animation: glow 20s linear infinite;
 }
 
 #contenedorForOrder {
@@ -426,9 +552,130 @@ form .containerBtonChat .bEnv::before {
   margin-top: 2.75rem;
   margin-left: auto;
   margin-right: auto;
-  border-bottom: double 0.5rem #baab8f;
+  border-bottom: double 0.5rem rgb(187, 172, 144);
+}
+
+.formNewProduct {
+  width: 90%;
+  margin: auto;
+}
+.formNewProduct div input {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px 1px;
+  background-color: rgb(54, 55, 55);
+  padding-left: 7px;
+}
+.formNewProduct .containerButtonUpdate .buttonUpdateProduct {
+  margin: auto;
+  position: relative;
+  border: none;
+  border-radius: 9px;
+  line-height: 1;
+  margin-left: 0.5rem;
+  margin-top: 0.75rem;
+  height: 40px;
+  width: 75px;
+  font-size: 0.95rem;
+  color: rgb(255, 255, 255);
+  background-color: rgb(14, 14, 14);
+}
+.formNewProduct .containerButtonUpdate .buttonUpdateProduct::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 94%;
+  height: 90%;
+  background: linear-gradient(45deg, rgb(40, 232, 203), blue, rgb(255, 105, 185), blue, black, rgb(21, 229, 226), blue, rgb(129, 58, 250), blue, black);
+  background-size: 500%;
+  border-radius: 10px;
+  filter: blur(5px);
+  animation: glow 20s linear infinite;
+}
+
+.pageFormCreateAccount {
+  margin: auto;
+  width: 90%;
+}
+
+#formLogin .inputsFormUserPass input {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px 1px;
+  background-color: rgb(54, 55, 55);
+  padding-left: 7px;
+}
+#formLogin .containerButtonLoggin .butonLogin {
+  margin: auto;
+  position: relative;
+  border: none;
+  border-radius: 9px;
+  line-height: 1;
+  margin-left: 0.5rem;
+  margin-top: 0.75rem;
+  height: 40px;
+  width: 75px;
+  font-size: 0.95rem;
+  color: rgb(255, 255, 255);
+  background-color: rgb(14, 14, 14);
+}
+#formLogin .containerButtonLoggin .butonLogin::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 94%;
+  height: 90%;
+  background: linear-gradient(45deg, rgb(40, 232, 203), blue, rgb(255, 105, 185), blue, black, rgb(21, 229, 226), blue, rgb(129, 58, 250), blue, black);
+  background-size: 500%;
+  border-radius: 10px;
+  filter: blur(5px);
+  animation: glow 20s linear infinite;
+}
+
+#formCreateAccount div input {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px 1px;
+  background-color: rgb(54, 55, 55);
+  padding-left: 7px;
+}
+#formCreateAccount #containerButtonCreateAccount #buttonCretaAccount {
+  margin: auto;
+  position: relative;
+  border: none;
+  line-height: 1;
+  border-radius: 10px;
+  margin-left: 0.5rem;
+  margin-top: 0.75rem;
+  height: 40px;
+  width: 75px;
+  font-size: 0.95rem;
+  color: rgb(255, 255, 255);
+  background-color: rgb(14, 14, 14);
+}
+#formCreateAccount #containerButtonCreateAccount #buttonCretaAccount::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 94%;
+  height: 90%;
+  background: linear-gradient(45deg, rgb(40, 232, 203), blue, rgb(255, 105, 185), blue, black, rgb(21, 229, 226), blue, rgb(129, 58, 250), blue, black);
+  background-size: 500%;
+  border-radius: 10px;
+  filter: blur(5px);
+  animation: glow 20s linear infinite;
 }
 
 #footer {
-  border-top: double 0.5rem #baab8f;
+  border-top: double 0.5rem rgb(186, 171, 143);
+}
+
+.imgGitHubFooter {
+  filter: invert(75%);
 }/*# sourceMappingURL=estilos.css.map */

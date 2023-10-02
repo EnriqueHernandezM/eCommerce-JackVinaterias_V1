@@ -72,3 +72,127 @@
 {"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-09-27T03:00:33.554Z"}
 {"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-09-27T03:00:33.767Z"}
 {"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-09-27T03:00:33.769Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:11:49.510Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:11:49.511Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:11:50.869Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:11:50.871Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:11:52.627Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:11:52.628Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:11:53.973Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:11:53.974Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:11:55.725Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:11:55.727Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:11:55.988Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:11:55.989Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:11:56.306Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:11:56.308Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:12:00.472Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:12:00.473Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:12:13.810Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:12:13.811Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:12:31.954Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:12:31.956Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:17:48.625Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:17:48.627Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:18:53.677Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:18:53.678Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:35:04.236Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:35:04.238Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:35:43.256Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:35:43.258Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:36:08.995Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:36:08.996Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:40:01.867Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:40:01.870Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:40:18.275Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:40:18.277Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:41:36.799Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:41:36.802Z"}
+{"level":"error","message":"TypeError: First argument to String.prototype.includes must not be a regular expression","timestamp":"2023-10-02T14:43:29.556Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:43:29.560Z"}
+{"level":"error","message":"TypeError: First argument to String.prototype.includes must not be a regular expression","timestamp":"2023-10-02T14:43:59.452Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:43:59.455Z"}
+{"level":"error","message":"TypeError: First argument to String.prototype.includes must not be a regular expression","timestamp":"2023-10-02T14:44:03.924Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:44:03.925Z"}
+{"level":"error","message":"TypeError: First argument to String.prototype.includes must not be a regular expression","timestamp":"2023-10-02T14:44:14.374Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:44:14.376Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:44:28.430Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:44:28.433Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:44:31.978Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:44:31.980Z"}
+{"level":"error","message":"TypeError: First argument to String.prototype.includes must not be a regular expression","timestamp":"2023-10-02T14:44:42.797Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:44:42.799Z"}
+{"level":"error","message":"TypeError: First argument to String.prototype.includes must not be a regular expression","timestamp":"2023-10-02T14:45:24.247Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:45:24.249Z"}
+{"level":"error","message":"TypeError: First argument to String.prototype.includes must not be a regular expression","timestamp":"2023-10-02T14:45:25.979Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:45:25.983Z"}
+{"level":"error","message":"TypeError: First argument to String.prototype.includes must not be a regular expression","timestamp":"2023-10-02T14:45:30.080Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:45:30.082Z"}
+{"level":"error","message":"TypeError: First argument to String.prototype.includes must not be a regular expression","timestamp":"2023-10-02T14:46:17.185Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:46:17.187Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:46:43.022Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:46:43.023Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:46:45.391Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:46:45.392Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:47:10.697Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:47:10.700Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:47:14.652Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:47:14.654Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:47:18.431Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:47:18.433Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:47:24.231Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:47:24.234Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:47:30.292Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:47:30.293Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:47:31.422Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:47:31.423Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:50:44.035Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:50:44.039Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:51:04.383Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:51:04.384Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:51:09.525Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:51:09.526Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:51:16.295Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:51:16.297Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:51:20.031Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:51:20.033Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:52:12.114Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:52:12.116Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:52:25.074Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:52:25.075Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:52:39.627Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:52:39.628Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:52:46.848Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:52:46.850Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:53:43.761Z"}
+{"level":"error","message":"Error: EEE","timestamp":"2023-10-02T14:54:08.021Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:54:08.024Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:57:44.090Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:57:44.092Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:57:54.807Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:57:54.809Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T14:58:14.463Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T14:58:14.466Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T15:02:22.454Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T15:02:22.457Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T15:03:48.854Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T15:03:48.856Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T15:03:52.321Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T15:03:52.322Z"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'email')","timestamp":"2023-10-02T15:04:00.544Z"}
+{"level":"error","message":"Error: Unexpected input given to normalize. Expected type to be \"object\", found \"undefined\".","timestamp":"2023-10-02T15:04:00.546Z"}
+{"level":"error","message":"error in getApiProducto controllerTypeError: Cannot read properties of undefined (reading 'toUpperCase')","timestamp":"2023-10-02T17:27:08.434Z"}
+{"level":"error","message":"error in getApiProducto controllerTypeError: Cannot read properties of undefined (reading 'toUpperCase')","timestamp":"2023-10-02T17:30:41.445Z"}
+{"level":"error","message":"error in getApiProducto controllerTypeError: Cannot read properties of undefined (reading 'toUpperCase')","timestamp":"2023-10-02T19:53:37.202Z"}
+{"level":"error","message":"error in getApiProducto controllerTypeError: Cannot read properties of undefined (reading 'toUpperCase')","timestamp":"2023-10-02T19:53:39.868Z"}
+{"level":"error","message":"error in getApiProducto controllerTypeError: Cannot read properties of undefined (reading 'toUpperCase')","timestamp":"2023-10-02T19:53:42.764Z"}
+{"level":"error","message":"error in getApiProducto controllerTypeError: Cannot read properties of undefined (reading 'toUpperCase')","timestamp":"2023-10-02T19:54:17.935Z"}
+{"level":"error","message":"error in getApiProducto controllerTypeError: Cannot read properties of undefined (reading 'toUpperCase')","timestamp":"2023-10-02T19:54:42.625Z"}
+{"level":"error","message":"error in getApiProducto controllerTypeError: Cannot read properties of undefined (reading 'toUpperCase')","timestamp":"2023-10-02T19:54:45.736Z"}
+{"level":"error","message":"error in getApiProducto controllerTypeError: Cannot read properties of undefined (reading 'toUpperCase')","timestamp":"2023-10-02T19:55:48.192Z"}
+{"level":"error","message":"error in getApiProducto controllerTypeError: Cannot read properties of undefined (reading 'toUpperCase')","timestamp":"2023-10-02T20:08:09.094Z"}
+{"level":"error","message":"error in getApiProducto controllerTypeError: Cannot read properties of undefined (reading 'toUpperCase')","timestamp":"2023-10-02T20:52:36.230Z"}
+{"level":"error","message":"error in getApiProducto controllerTypeError: Cannot read properties of undefined (reading 'toUpperCase')","timestamp":"2023-10-02T20:54:08.143Z"}
+{"level":"error","message":"error in getApiProducto controllerTypeError: Cannot read properties of undefined (reading 'toUpperCase')","timestamp":"2023-10-02T20:54:08.691Z"}
+{"level":"error","message":"error in getApiProducto controllerTypeError: Cannot read properties of undefined (reading 'toUpperCase')","timestamp":"2023-10-02T22:44:54.252Z"}
+{"level":"error","message":"error in getApiProducto controllerTypeError: Cannot read properties of undefined (reading 'toUpperCase')","timestamp":"2023-10-02T22:52:08.522Z"}

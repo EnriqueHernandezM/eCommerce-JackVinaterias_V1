@@ -1,4 +1,5 @@
 .navbar {
+  border-bottom: 1px solid rgb(42, 42, 42);
   div {
     h1 {
       a {
@@ -11,10 +12,27 @@
         }
       }
     }
-    form {
-      input {
+    #formSearch {
+      #inputSearch {
+        border: none;
+        border-bottom: 3px solid rgb(186, 171, 143);
+        font-size: 17px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(14, 14, 14);
       }
-      button {
+      #inputSearch:focus {
+        border-color: rgb(186, 171, 143);
+        box-shadow: 0 0 8px rgb(186, 171, 143);
+        color: rgb(255, 255, 255);
+      }
+      .buttonSearch {
+        color: rgb(250, 247, 247);
+        border: none;
+        font-size: 1.15rem;
+      }
+      .buttonSearch:hover {
+        color: rgb(169, 160, 117);
+        background-color: rgba(0, 0, 0, 0);
       }
     }
   }

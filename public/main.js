@@ -17,32 +17,12 @@ const mostrarRegreso = () => {
     bloquearAcceso();
   } else if (regresoOn == " ") {
     document.getElementById("acceso");
-    respuesta();
   }
 };
 const respuesta = () => {
   let inputValue = document.getElementById("entradaEdad").value;
   localStorage.setItem("inputValueEntradaEdad", inputValue);
   if (inputValue >= 18) {
-    let inset = "";
-    inset =
-      inset +
-      `
-    <div id="anuncioEntrada">
-    </div>
-    `;
-    document.getElementById("respAnuncio").innerHTML = inset;
-    let mostrando = "";
-    let resulta = `Hola tienes ${inputValue} años binvenido`;
-    mostrando =
-      mostrando +
-      `<div>
-      <h3> 
-      <p>${resulta} </p>
-      </h3>
-     </div>
-      `;
-    document.getElementById("anuncioEntrada").innerHTML = mostrando;
     document.getElementById("acceso").remove();
   } else if (inputValue < 17) {
     bloquearAcceso();
@@ -74,7 +54,7 @@ const renderPostNewProducto = () => {
           <h1>Agregar Un Nuevo Producto</h1>
         </div>
       </div>
-      <form enctype="multipart/form-data" method="POST" class="row p-5" onsubmit="newProduct();return false;">
+      <form enctype="multipart/form-data" method="POST" class="row p-5 formNewProduct" onsubmit="newProduct();return false;">
         <div class="col-xs-12 col-md-6 col-lg-4">
           <p class="text-white P-2">Nombre del Licor</p>
           <input id="newIngProduct" type="text" name="product"  maxlength="27" placeholder="Ingresa nombre del producto " class="w-75" required="true" />
@@ -103,8 +83,8 @@ const renderPostNewProducto = () => {
         <p class="text-white P-2">ingresa Descripcion del producto</p>
         <input id="newIngDescription" type="text" maxlength="50" name="description" class="w-100" required="true" />
       </div>
-        <div class="col-xs-12 col-md-6 col-lg-12 P-4 mt-5 text-center ps-5 ms-5">
-          <input type="submit" value="Upload product" />
+        <div class="containerButtonUpdate col-xs-12 col-md-6 col-lg-12 P-4 mt-5 text-center">
+          <button class="buttonUpdateProduct" type="submit" > Actualizar Producto </button>
         </div>
       </form>`;
   document.getElementById("renderPostProducts").innerHTML = htmlUpdate;
@@ -153,13 +133,13 @@ const renderFormActProduct = (number) => {
   const p = JSON.parse(x);
   let htmlFormActProduct = "";
   htmlFormActProduct += `
-  <div class="container-fluid mt-5">
+  <div id="formUpdateProduct"class="container-fluid mt-5">
     <div class="row p-5 ps-2">
       <div class="col text-white ms-5 text-center">
       <h1>Editar Un Producto</h1>
       </div>
     </div>
-    <div class="row p-5"> 
+    <div  class="formNewProduct row p-5"> 
       <div class="col-xs-12 col-md-6 col-lg-4">
       <p class="text-white P-2">Nombre del Licor</p>
       <input id="updateProduct" type="text" maxlength="27  placeholder="${p.product}" class="w-75"
@@ -191,8 +171,8 @@ const renderFormActProduct = (number) => {
         <p class="text-white P-2">ingresa CodeItem</p>
         <input id="updateCodeItem" min="10" max="100000" type="number" placeholder="${p.codeItem}" class="w-100"value="${p.codeItem}"  />
       </div>
-      <div class="col-xs-12 col-md-6 col-lg-12 P-4 mt-5 text-center ps-5 ms-5">
-        <input type="submit" onclick="updateOneProduct('${p.id || p._id}')" value="update products" />
+      <div class="containerButtonUpdate col-xs-12 col-md-6 col-lg-12 P-4 mt-5 text-center ps-5 ms-5">
+        <button class="buttonUpdateProduct" type="submit" onclick="updateOneProduct('${p.id || p._id}')" > Actualizar Producto</button>
       </div>   
     </div>  
   </div>
@@ -276,20 +256,24 @@ const renderCantItemsF = (idproduct) => {
   let impDomC = "";
   impDomC += `
   <div>
-  <h3> elige la cantidad que agregaras </h3>
+  <h3> Elige la cantidad que agregaras </h3>
   <input id="inputAmoutToBuy" min="1" max="20" type="number" placeholder="cantidad" />
-  <input onclick="addArticleTrolley('${idproduct}')" class="bEnv" type="submit" value="Enviar" />
+  <div class="containerButtonLoggin">
+  <button onclick="addArticleTrolley('${idproduct}')" class="butonLogin bEnv" type="submit"> Agregar </button>
+  </div>
   </div>
   `;
   document.getElementById("renderCantItems").innerHTML = impDomC;
 };
+
 /////////////////////////////////Fetch Get buscador Por Nombre y renderiza items
 const buscadorItems = () => {
-  let entradaAbuscar = document.getElementById("ingresoBuscadorItems").value;
+  let entradaAbuscar = document.getElementById("inputSearch").value;
+
   fetch("http://localhost:8080/api/productos/busqueda?product=" + entradaAbuscar)
     .then((res) => res.json())
     .then((json) => {
-      document.getElementById("ingresoBuscadorItems").value = "";
+      document.getElementById("inputSearch").value = "";
       const inventarioVinateria = json;
       let html1 = "";
       if (inventarioVinateria.length == 0) {
@@ -300,8 +284,8 @@ const buscadorItems = () => {
       }
       inventarioVinateria.forEach((el) => {
         html1 += `
-        <div>
-        <img src="${el.image}" alt="">
+        <div id="cardOneItem">
+        <img class="rounded mt-3" src="${el.image}" alt="">
           <p >  ${el.product}  </p>
           <p> $ ${el.price} </p>
           <span  onclick=addArticleTrolley("${el._id || el.id}");> agregar al 🛒 </span>
@@ -309,12 +293,29 @@ const buscadorItems = () => {
         </div>
         `;
       });
-      document.getElementById("probandoAct").innerHTML = html1;
+      document.getElementById("interfaceRenderItems").innerHTML = html1;
     })
     .catch((e) => {
       console.log(e + "error");
     });
 };
+if (window.location.pathname == "/api/productos") {
+  document.getElementById("inputSearch").focus();
+}
+document.getElementById("inputSearch").addEventListener("click", () => {
+  if (window.location.pathname == "/api/productos") {
+    document.getElementById("inputSearch").focus();
+    return;
+  }
+  window.location.pathname = "/api/productos";
+});
+
+document.getElementById("inputSearch").addEventListener("keypress", function (event) {
+  if (event.code === "Enter") {
+    event.preventDefault();
+    buscadorItems();
+  }
+});
 //////////////////////////Fetch DELETE ITEMS TROLLEY
 const deleteItemTrolley = (idItem) => {
   let url = "http://localhost:8080/api/carritodelete/";
@@ -337,10 +338,17 @@ const enviarMsg = () => {
   });
 };
 socket.on("connect", () => {
-  console.log("quede conectado!");
+  console.log("socket Connect");
 });
 socket.emit("on", {});
-//renderiza mensajes
+socket.on("notLogin", (messageNotOLogin) => {
+  Swal.fire({
+    text: `${messageNotOLogin}`,
+    background: "#151514",
+    showConfirmButton: false,
+    timer: 550,
+  });
+});
 socket.on("listaMsgs", (data) => {
   let html = "";
   const normalizedCount = document.getElementById("normalizados");

@@ -3,7 +3,7 @@
   <head>
     <%- include('../partials/head'); %>
   </head>
-  <body class="bg-dark text-white">
+  <body class="text-white">
     <%- include('../partials/navbar'); %>
     <div class="container-fluid mt-5" id="renderPostProducts"></div>
     <div class="container-fluid mt-5" id="formuToActulisedOneItem"></div>
@@ -26,7 +26,7 @@
           <span onclick="renderCantItemsF('<%=el._id||el.id%>')"> agregar al 🛒 </span>
           <span onclick="deleteElement('<%=el._id||el.id%>')">borrar 🗑️ </span>
           <% const x = JSON.stringify(el)%>
-          <span onclick="renderFormActProduct('<%=x%>')"> Actualizar item 🔃</span>
+          <span onclick="renderFormActProduct('<%=x%>')"> <a href="#formUpdateProduct"> Actualizar item 🔃</a></span>
         </div>
         </div>
         <%})%>
@@ -36,7 +36,7 @@
       <div class="row">
         <h3 class="fs-1 mt-5 p-5 text-center">CHAT</h3>
         <h5 class="fs-4 text-center">Ingresa tu comentario para ver todos</h5>
-        <div class="d-flex container justify-content-between my-5">   
+        <div class="d-flex container justify-content-between mt-1">   
         </div>
         <div class="col-xs-12 col-md-6 col-lg-4">
           <form onsubmit="enviarMsg();return false;">

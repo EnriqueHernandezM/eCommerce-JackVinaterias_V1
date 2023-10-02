@@ -1,0 +1,68 @@
+.pageFormCreateAccount {
+  margin: auto;
+  width: 90%;
+}
+#formLogin {
+  .inputsFormUserPass {
+    p {
+    }
+    input {
+      border: none;
+      border-radius: 5px;
+      box-shadow: 1px 1px 2px 1px;
+      background-color: rgb(54, 55, 55);
+      padding-left: 7px;
+    }
+  }
+  .containerButtonLoggin {
+    .butonLogin {
+      margin: auto;
+      position: relative;
+      border: none;
+      border-radius: 9px;
+      line-height: 1;
+      margin-left: 0.5rem;
+      margin-top: 0.75rem;
+      height: 40px;
+      width: 75px;
+      font-size: 0.95rem;
+      color: rgb(255, 255, 255);
+      background-color: rgb(14, 14, 14);
+    }
+    .butonLogin::before {
+      @include configBeforeButton;
+    }
+  }
+}
+#formCreateAccount {
+  div {
+    p {
+    }
+    input {
+      border: none;
+      border-radius: 5px;
+      box-shadow: 1px 1px 2px 1px;
+      background-color: rgb(54, 55, 55);
+      padding-left: 7px;
+    }
+  }
+  #containerButtonCreateAccount {
+    #buttonCretaAccount {
+      margin: auto;
+      position: relative;
+      border: none;
+      line-height: 1;
+      border-radius: 10px;
+      margin-left: 0.5rem;
+      margin-top: 0.75rem;
+      height: 40px;
+      width: 75px;
+      font-size: 0.95rem;
+      color: rgb(255, 255, 255);
+      background-color: rgb(14, 14, 14);
+    }
+    #buttonCretaAccount::before {
+      @include configBeforeButton;
+    }
+  }
+}

@@ -3,7 +3,7 @@ const timestamp = moment().format("lll");
 const logger = require("../utils/loggers");
 const { DaoMessages } = require("../db/daos/indexDaos");
 const { normalize, schema } = require("normalizr");
-
+const Joi = require("joi");
 let infoUser;
 const authorSchema = new schema.Entity("authors", {}, { idAttribute: "idmail" });
 const messageSchema = new schema.Entity("texts", {
@@ -35,6 +35,14 @@ class ContainerMessages {
   }
   async saveMsges(mensaje) {
     try {
+      const reExpNoAccept = /[.*+\-?^${}()<>|[\]\\]/g;
+      if (!infoUser) {
+        return { msge: "login please" };
+      }
+      if (mensaje.text.match(reExpNoAccept)) {
+        throw new Error("Invalid entry");
+      }
+      ContainerMessages.validarMessage(mensaje);
       const author1 = {
         idmail: infoUser.email,
         avatar: infoUser.avatar,
@@ -56,6 +64,15 @@ class ContainerMessages {
       return normalizarOk;
     } catch (err) {
       logger.log("error", `${err}`);
+    }
+  }
+  static validarMessage(message) {
+    const CreateMessageSchema = Joi.object({
+      text: Joi.string().required(),
+    });
+    const { error } = CreateMessageSchema.validate(message);
+    if (error) {
+      throw error;
     }
   }
 }

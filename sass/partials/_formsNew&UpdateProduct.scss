@@ -1,0 +1,35 @@
+.formNewProduct {
+  width: 90%;
+  margin: auto;
+  div {
+    p {
+    }
+    input {
+      border: none;
+      border-radius: 5px;
+      box-shadow: 1px 1px 2px 1px;
+      background-color: rgb(54, 55, 55);
+      padding-left: 7px;
+    }
+  }
+
+  .containerButtonUpdate {
+    .buttonUpdateProduct {
+      margin: auto;
+      position: relative;
+      border: none;
+      border-radius: 9px;
+      line-height: 1;
+      margin-left: 0.5rem;
+      margin-top: 0.75rem;
+      height: 40px;
+      width: 75px;
+      font-size: 0.95rem;
+      color: rgb(255, 255, 255);
+      background-color: rgb(14, 14, 14);
+    }
+    .buttonUpdateProduct::before {
+      @include configBeforeButton;
+    }
+  }
+}

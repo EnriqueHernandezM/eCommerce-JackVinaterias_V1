@@ -3,7 +3,7 @@
   <head>
     <%- include('../partials/head'); %>
   </head>
-  <body class="bg-dark text-white">
+  <body class=" text-white">
     <%- include('../partials/navbar'); %>
     <div class="container  mt-3">
       <div class="row">
@@ -87,17 +87,17 @@
           <a class="" href="/perfil/crearCuenta">Registrarme</a>
         </div>
       </div>
-      <form action="/perfil/login" method="post" class="row p-5">
-        <div class="col-xs-12 col-md-6 col-lg-4">
+      <form id="formLogin" action="/perfil/login" method="post" class="row p-5">
+        <div class="col-xs-12 col-md-6 col-lg-4 inputsFormUserPass">
           <p class="text-white P-2">Correo de Usuario</p>
           <input type="email" name="email" placeholder="Ingresa el correo de tu cuenta" class="w-75" required="true" />
         </div>
-        <div class="col-xs-12 col-md-6 col-lg-4">
-          <p class="text-white P-2">ingresa tu contraseña</p>
+        <div class="col-xs-12 col-md-6 col-lg-4 inputsFormUserPass">
+          <p class="text-white P-2 ">ingresa tu contraseña</p>
           <input type="password" name="password" class="w-100" required="true" placeholder="contraseña" />
         </div>
-        <div class="col-xs-12 col-md-6 col-lg-12 P-4 mt-5 text-center">
-          <button onclick="submit">iniciar secion</button>
+        <div class="col-xs-12 col-md-12 col-lg-12 P-4 mt-5 text-center containerButtonLoggin">
+          <button class="butonLogin" onclick="submit">iniciar secion</button>
         </div>
       </form>
     <% } %><%- include('../partials/footer'); %>

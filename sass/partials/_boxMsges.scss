@@ -41,60 +41,30 @@ form {
   }
 
   #inputMsg {
+    padding-left: 1rem;
+    padding-top: 0.5rem;
     border: none;
     border-radius: 7px;
     width: 35vw;
-    background-color: rgb(226, 213, 195);
+    background-color: rgba(174, 166, 154, 0.447);
   }
   .containerBtonChat {
     display: flex;
     flex-direction: row-reverse;
     .bEnv {
+      border: none;
       border-radius: 7px;
       margin-left: 0.5rem;
       margin-top: 0.75rem;
       height: 40px;
       width: 75px;
-      color: rgb(0, 0, 0);
+      color: rgb(255, 255, 255);
+      background-color: rgb(14, 14, 14);
       position: relative;
     }
     .bEnv::before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        45deg,
-        rgb(40, 232, 203),
-        blue,
-        rgb(255, 105, 185),
-        blue,
-        black,
-        rgb(21, 229, 226),
-        blue,
-        rgb(129, 58, 250),
-        blue,
-        black
-      );
-      background-size: 500%;
-      border-radius: 10px;
-      filter: blur(5px);
-      animation: glow 20s linear infinite;
+      @include configBeforeButton;
     }
-    @keyframes glow {
-      0% {
-        background-position: 0 0;
-      }
-      50% {
-        display: none;
-        background-position: 400% 0;
-      }
-      100% {
-        background-position: 0 0;
-      }
-    }
+    @include keyFramesGlow;
   }
 }
