@@ -30,10 +30,11 @@ class ContainerAuthentication {
   }
   async createNewUser(newUser, funcRes) {
     try {
-      const userAddOk = await DaoUsers.createNewUserDb(newUser);
+      console.log(newUser);
+      /* const userAddOk = await DaoUsers.createNewUserDb(newUser);
       if (userAddOk) {
         funcRes(null, userAddOk);
-      }
+      } */
     } catch (err) {
       throw err;
     }

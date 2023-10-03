@@ -9,6 +9,7 @@ const authorSchema = new schema.Entity("authors", {}, { idAttribute: "idmail" })
 const messageSchema = new schema.Entity("texts", {
   author: authorSchema,
 });
+
 const messageSchemaOk = [messageSchema];
 const mostrarRegreso = () => {
   if (regresoOn >= 18) {
@@ -367,3 +368,16 @@ socket.on("listaMsgs", (data) => {
 });
 ////
 ///
+
+var inputFile = document.getElementById("fileImg");
+inputFile.addEventListener("change", mostrarImagen, false);
+let file;
+function mostrarImagen(event) {
+  file = event.target.files[0];
+  var reader = new FileReader();
+  reader.onload = function (event) {
+    const img = document.getElementById("pruebaImg");
+    img.src = event.target.result;
+  };
+  reader.readAsDataURL(file);
+}

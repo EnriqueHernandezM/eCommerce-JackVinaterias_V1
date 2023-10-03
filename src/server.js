@@ -5,6 +5,7 @@ let puertoPorArgumentos = argv["_"][0];
 const cors = require("cors");
 const logger = require("./utils/loggers");
 const flash = require("connect-flash");
+const fileUpload = require("express-fileupload");
 const passport = require("passport");
 const environmentVars = require("./config/config");
 const { index, apiOrders, apiProducts, apiTrolley, authentication, failRoute } = require("./routers/allRouts");
@@ -41,6 +42,12 @@ ya que cambiemos passport conectar por env var*/
   }
   middlewares() {
     this.app.use(cors({ origin: "*" }));
+    this.app.use(
+      fileUpload({
+        useTempFiles: true,
+        tempFileDir: "/tmp/",
+      })
+    );
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use("/public", express.static(__dirname + "../../public"));

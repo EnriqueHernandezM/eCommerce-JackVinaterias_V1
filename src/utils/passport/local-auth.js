@@ -45,6 +45,8 @@ passport.use(
           logger.log("info", "password error");
           return done(null, false, req.flash("crearCuentamsg", "revisa que tu password sea igual"));
         }
+
+        let newAvatar = req.files || req.body.avatar;
         const newUser = {
           email: email,
           password: createHash(password),
@@ -52,7 +54,7 @@ passport.use(
           edad: req.body.edad,
           direccion: req.body.direccion,
           telefono: req.body.telefono,
-          avatar: req.body.avatar,
+          avatar: newAvatar,
           idTrolley: "f",
         };
         const mailOptions = {
