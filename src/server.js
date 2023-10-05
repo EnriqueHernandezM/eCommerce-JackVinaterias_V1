@@ -9,6 +9,7 @@ const fileUpload = require("express-fileupload");
 const passport = require("passport");
 const environmentVars = require("./config/config");
 const { index, apiOrders, apiProducts, apiTrolley, authentication, failRoute } = require("./routers/allRouts");
+const { notFound, errorHandler } = require("./middleware/error.middleware");
 const httpServer = require("http").createServer(app);
 const io = require("socket.io")(httpServer);
 const socketModule = require("./controller/socketMessages/sockets");
@@ -20,6 +21,8 @@ class InitServer {
     this.app = app;
     this.httpServer = httpServer;
     this.session = session;
+    this.notFound = notFound;
+    this.errorHandler = errorHandler;
     this.initDbs();
     this.auth();
     this.middlewares();
@@ -66,6 +69,8 @@ ya que cambiemos passport conectar por env var*/
     this.app.use("/api", apiProducts);
     this.app.use("/api", apiTrolley);
     this.app.use("/perfil", authentication);
+    this.app.use(this.notFound);
+    this.app.use(this.errorHandler);
     this.app.get("*", failRoute);
   }
   engineEjs() {

@@ -17,4 +17,3 @@ module.exports = session({
     maxAge: 600000000000000, //sesion durara 10 minutos
   },
 });
-process;
