@@ -196,3 +196,19 @@
 {"level":"error","message":"error in getApiProducto controllerTypeError: Cannot read properties of undefined (reading 'toUpperCase')","timestamp":"2023-10-02T20:54:08.691Z"}
 {"level":"error","message":"error in getApiProducto controllerTypeError: Cannot read properties of undefined (reading 'toUpperCase')","timestamp":"2023-10-02T22:44:54.252Z"}
 {"level":"error","message":"error in getApiProducto controllerTypeError: Cannot read properties of undefined (reading 'toUpperCase')","timestamp":"2023-10-02T22:52:08.522Z"}
+{"level":"error","message":"error in getCreateAcount controllerTypeError: Cannot read properties of undefined (reading 'body')","timestamp":"2023-10-06T19:30:13.447Z"}
+{"level":"error","message":"error in getCreateAcount controllerTypeError: Cannot read properties of undefined (reading 'body')","timestamp":"2023-10-06T19:30:22.454Z"}
+{"level":"error","message":"error in getCreateAcount controllerTypeError: Cannot read properties of undefined (reading 'body')","timestamp":"2023-10-06T19:30:51.290Z"}
+{"level":"error","message":"error in getCreateAcount controllerError: email required","timestamp":"2023-10-06T19:32:03.831Z"}
+{"level":"error","message":"error in getCreateAcount controllerError: Email required","timestamp":"2023-10-06T19:32:28.605Z"}
+{"level":"error","message":"error in getCreateAcount controllerError: Email required","timestamp":"2023-10-06T19:32:29.530Z"}
+{"level":"error","message":"error in getCreateAcount controllerError: Email required","timestamp":"2023-10-06T19:32:31.144Z"}
+{"level":"error","message":"error in getCreateAcount controllerError: Email required","timestamp":"2023-10-06T19:34:24.524Z"}
+{"level":"error","message":"error in getCreateAcount controllerError: Email required","timestamp":"2023-10-06T19:34:56.034Z"}
+{"level":"error","message":"error in getCreateAcount controllerError: Email required","timestamp":"2023-10-06T19:37:18.306Z"}
+{"level":"error","message":"error in getCreateAcount controllerError: Email required","timestamp":"2023-10-06T19:40:26.731Z"}
+{"level":"error","message":"error in getCreateAcount controllerError: Email required","timestamp":"2023-10-06T19:40:37.382Z"}
+{"level":"error","message":"error in getCreateAcount controllerReferenceError: isEmpty is not defined","timestamp":"2023-10-06T19:44:36.187Z"}
+{"level":"error","message":"error in getCreateAcount controllerTypeError: req.body.isEmpty is not a function","timestamp":"2023-10-06T19:45:31.125Z"}
+{"level":"error","message":"error in getCreateAcount controllerReferenceError: _ is not defined","timestamp":"2023-10-06T19:46:12.884Z"}
+{"level":"error","message":"error in getCreateAcount controllerError: Data required","timestamp":"2023-10-06T19:47:23.733Z"}

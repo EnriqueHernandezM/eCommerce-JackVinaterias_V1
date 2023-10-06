@@ -43,6 +43,7 @@ class ControllerAuthentication {
       }
     } catch (err) {
       logger.log("error", `error in getLogIn controller${err}`);
+      throw err;
     }
   };
   postLogIn = async (req, res) => {
@@ -81,11 +82,15 @@ class ControllerAuthentication {
       }
     } catch (err) {
       logger.log("error", `error in PostLogIn controller${err}`);
+      throw err;
     }
   };
   getCreateAcount = (req, res) => {
     try {
       logger.log("info", { route: req.path, method: req.route.methods });
+      if (Object.keys(req.body).length === 0) {
+        throw new Error("missing data");
+      }
       if (req.isAuthenticated()) {
         this.getLogIn(req, res);
       } else if (!req.isAuthenticated()) {
@@ -93,14 +98,17 @@ class ControllerAuthentication {
       }
     } catch (err) {
       logger.log("error", `error in getCreateAcount controller${err}`);
+      throw err;
     }
   };
   postCreateAcount = (req, res) => {
     try {
       logger.log("info", { route: req.originalUrl, method: req.route.methods });
+
       this.getLogIn(req, res);
     } catch (err) {
       logger.log("error", `error in postcreateAcount controller${err}`);
+      throw err;
     }
   };
   logOut = (req, res) => {
@@ -123,6 +131,7 @@ class ControllerAuthentication {
       });
     } catch (err) {
       logger.log("error", `error in logout controller${err}`);
+      throw err;
     }
   };
 }

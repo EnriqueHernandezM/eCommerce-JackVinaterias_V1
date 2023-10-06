@@ -7,7 +7,6 @@ class ContainerAuthentication {
   async getInfoUser(email, funcGetUser) {
     try {
       const resUser = await DaoUsers.getOneUserForEmailDb(email);
-
       if (resUser && resUser.email === email) {
         funcGetUser(null, resUser);
       } else {
@@ -33,8 +32,9 @@ class ContainerAuthentication {
     try {
       const chartertsNotAcept = /[$&<>%!`?{}]/;
       if (!+newUser.edad || !+newUser.telefono || chartertsNotAcept.test(newUser.nombre) || chartertsNotAcept.test(newUser.direccion)) {
-        throw new Error("Date invalid");
+        return funcRes(new Error("Date invalid"), null);
       }
+
       const resImg = ContainerAuthentication.validateImg(newUser.avatar.avatar || newUser.avatar);
       if (resImg) {
         const newImageUrlToS3 = await uploadFile(newUser.avatar.avatar);
@@ -43,7 +43,7 @@ class ContainerAuthentication {
       ContainerAuthentication.checkPropsUser(newUser);
       const userAddOk = await DaoUsers.createNewUserDb(newUser);
       if (userAddOk) {
-        funcRes(null, userAddOk);
+        return funcRes(null, userAddOk);
       }
     } catch (err) {
       throw err;
@@ -62,9 +62,9 @@ class ContainerAuthentication {
       password: Joi.string().required(),
       nombre: Joi.string().required(),
       edad: Joi.string().max(3).required(),
-      direccion: Joi.string().max(40).required(), //
+      direccion: Joi.string().max(40).required(),
       telefono: Joi.string().max(13).required(),
-      avatar: Joi.string().required(), //
+      avatar: Joi.string().required(),
       idTrolley: Joi.string().required(),
     });
     const { error } = CreateProductsSchema.validate(propsUserToCheck);

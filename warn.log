@@ -48,3 +48,23 @@
 {"err":"ruta inexistente","level":"warn","method":{"get":true},"route":"/favicon.ico","timestamp":"2023-10-03T12:50:11.601Z"}
 {"err":"ruta inexistente","level":"warn","method":{"get":true},"route":"/favicon.ico","timestamp":"2023-10-04T16:35:30.396Z"}
 {"err":"ruta inexistente","level":"warn","method":{"get":true},"route":"/favicon.ico","timestamp":"2023-10-05T16:18:00.089Z"}
+{"level":"warn","message":"Invalid Password","timestamp":"2023-10-05T17:48:14.745Z"}
+{"level":"warn","message":"Error in Saving user:Error: Date invalid","timestamp":"2023-10-06T19:22:40.499Z"}
+{"level":"warn","message":"Error in Saving user:Error: Date invalid","timestamp":"2023-10-06T19:23:55.975Z"}
+{"level":"warn","message":"Error in Saving user:Error: Date invalid","timestamp":"2023-10-06T19:24:45.013Z"}
+{"level":"warn","message":"Error in Saving user:Error: Date invalid","timestamp":"2023-10-06T19:24:48.173Z"}
+{"level":"warn","message":"Error in Saving user:Error: Date invalid","timestamp":"2023-10-06T19:25:02.658Z"}
+{"level":"warn","message":"Error in Saving user:Error: Date invalid","timestamp":"2023-10-06T19:25:09.336Z"}
+{"level":"warn","message":"Error in Saving user:Error: Date invalid","timestamp":"2023-10-06T19:25:19.842Z"}
+{"level":"warn","message":"Error in Saving user:Error: Date invalid","timestamp":"2023-10-06T19:27:03.440Z"}
+{"level":"warn","message":"password confirmation error","timestamp":"2023-10-06T19:34:55.467Z"}
+{"level":"warn","message":"Error in Saving user:Error: Date invalid","timestamp":"2023-10-06T19:35:08.665Z"}
+{"level":"warn","message":"password confirmation error","timestamp":"2023-10-06T19:37:17.997Z"}
+{"level":"warn","message":"password confirmation error","timestamp":"2023-10-06T19:38:11.337Z"}
+{"level":"warn","message":"password confirmation error","timestamp":"2023-10-06T19:40:37.173Z"}
+{"level":"warn","message":"password confirmation error","timestamp":"2023-10-06T19:41:03.899Z"}
+{"level":"warn","message":"password confirmation error","timestamp":"2023-10-06T19:41:17.420Z"}
+{"level":"warn","message":"password confirmation error","timestamp":"2023-10-06T19:44:34.954Z"}
+{"level":"warn","message":"password confirmation error","timestamp":"2023-10-06T19:45:30.353Z"}
+{"level":"warn","message":"password confirmation error","timestamp":"2023-10-06T19:46:12.294Z"}
+{"level":"warn","message":"password confirmation error","timestamp":"2023-10-06T19:47:22.893Z"}

@@ -42,7 +42,7 @@ passport.use(
           return done(null, false, req.flash("crearCuentamsg", "cuenta ya existente"));
         }
         if (password != req.body.confirmPass) {
-          logger.log("info", "password error");
+          logger.log("warn", "password confirmation error");
           return done(null, false, req.flash("crearCuentamsg", "revisa que tu password sea igual"));
         }
         let newAvatar = req.files || req.body.avatar;
@@ -70,7 +70,7 @@ passport.use(
         };
         containerAuthentication.createNewUser(newUser, (err, userWithId) => {
           if (err) {
-            logger.log("info", `Error in Saving user:${err}`);
+            logger.log("warn", `Error in Saving user:${err}`);
             return done(err);
           }
           logger.log("info", "User Registration succesful");

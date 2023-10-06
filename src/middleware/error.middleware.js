@@ -1,5 +1,5 @@
 const notFound = (req, res, next) => {
-  const err = new Error(`Not foun - ${req.originalUrl} vistit /api/productos`);
+  const err = new Error(`Not found - ${req.originalUrl} vistit /api/productos`);
   res.status(400);
   next(err);
 };
