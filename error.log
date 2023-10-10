@@ -212,3 +212,16 @@
 {"level":"error","message":"error in getCreateAcount controllerTypeError: req.body.isEmpty is not a function","timestamp":"2023-10-06T19:45:31.125Z"}
 {"level":"error","message":"error in getCreateAcount controllerReferenceError: _ is not defined","timestamp":"2023-10-06T19:46:12.884Z"}
 {"level":"error","message":"error in getCreateAcount controllerError: Data required","timestamp":"2023-10-06T19:47:23.733Z"}
+{"level":"error","message":"error in getCreateAcount controllerError: missing data","timestamp":"2023-10-09T16:15:34.842Z"}
+{"level":"error","message":"error in getCreateAcount controllerError: missing data","timestamp":"2023-10-09T16:15:39.368Z"}
+{"level":"error","message":"error in getApiProducto controllerTypeError: Cannot read properties of undefined (reading 'toUpperCase')","timestamp":"2023-10-10T16:33:40.605Z"}
+{"level":"error","message":"error in services getallTypeError: Cannot read properties of undefined (reading 'getAllitemsDb')","timestamp":"2023-10-10T18:24:20.849Z"}
+{"level":"error","message":"error in services getallTypeError: Cannot read properties of undefined (reading 'getAllitemsDb')","timestamp":"2023-10-10T18:24:27.562Z"}
+{"level":"error","message":"error in services getallTypeError: Cannot read properties of undefined (reading 'getAllitemsDb')","timestamp":"2023-10-10T18:25:37.899Z"}
+{"level":"error","message":"error in services getallTypeError: Cannot read properties of undefined (reading 'getAllitemsDb')","timestamp":"2023-10-10T18:25:50.644Z"}
+{"level":"error","message":"error in services getallTypeError: Cannot read properties of undefined (reading 'getAllitemsDb')","timestamp":"2023-10-10T18:25:51.368Z"}
+{"level":"error","message":"error in services getallTypeError: Cannot read properties of undefined (reading 'getAllitemsDb')","timestamp":"2023-10-10T18:28:08.675Z"}
+{"level":"error","message":"error in services getallTypeError: Cannot read properties of undefined (reading 'getAllitemsDb')","timestamp":"2023-10-10T18:28:26.724Z"}
+{"level":"error","message":"error in services getallTypeError: Cannot read properties of undefined (reading 'getAllitemsDb')","timestamp":"2023-10-10T18:28:27.964Z"}
+{"level":"error","message":"error in services getallTypeError: Cannot read properties of undefined (reading 'getAllitemsDb')","timestamp":"2023-10-10T18:29:53.525Z"}
+{"level":"error","message":"error in services getallTypeError: Cannot read properties of undefined (reading 'getAllitemsDb')","timestamp":"2023-10-10T18:29:57.533Z"}

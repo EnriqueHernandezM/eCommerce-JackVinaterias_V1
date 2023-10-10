@@ -347,7 +347,7 @@ socket.on("notLogin", (messageNotOLogin) => {
     text: `${messageNotOLogin}`,
     background: "#151514",
     showConfirmButton: false,
-    timer: 550,
+    timer: 750,
   });
 });
 socket.on("listaMsgs", (data) => {
@@ -381,3 +381,9 @@ function mostrarImagen(event) {
   };
   reader.readAsDataURL(file);
 }
+var input = document.getElementById("telNewUser");
+input.addEventListener("keypress", function (e) {
+  if (e.target.value.length > 13) {
+    alert("hasta 13 dijitos");
+  }
+});

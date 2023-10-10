@@ -68,3 +68,6 @@
 {"level":"warn","message":"password confirmation error","timestamp":"2023-10-06T19:45:30.353Z"}
 {"level":"warn","message":"password confirmation error","timestamp":"2023-10-06T19:46:12.294Z"}
 {"level":"warn","message":"password confirmation error","timestamp":"2023-10-06T19:47:22.893Z"}
+{"level":"warn","message":"Error in Saving user:Error: Date invalid","timestamp":"2023-10-10T16:01:46.319Z"}
+{"level":"warn","message":"Error in Saving user:Error: Date invalid","timestamp":"2023-10-10T16:09:56.269Z"}
+{"level":"warn","message":"Error in Saving user:Error: Date invalid","timestamp":"2023-10-10T16:10:25.833Z"}

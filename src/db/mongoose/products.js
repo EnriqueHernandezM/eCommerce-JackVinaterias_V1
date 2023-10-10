@@ -1,6 +1,5 @@
 const logger = require("../../utils/loggers");
 const { Schema, model } = require("mongoose");
-require("../../utils/databasConecctions/mongoose");
 
 const ProductoSchema = new Schema({
   product: { type: String, required: true, max: 100 },

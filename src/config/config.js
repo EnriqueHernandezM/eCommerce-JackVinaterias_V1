@@ -15,6 +15,7 @@ let environmentVars = {
   awsNameBucket: process.env.AWS_NAME_BUCKET,
   accesKeyId: process.env.ACCES_KEY_ID,
   accesKeySecret: process.env.ACCES_KEY_SECRET,
+  adminActive: process.env.ADMIN,
 };
 
 module.exports = environmentVars;

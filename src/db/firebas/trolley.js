@@ -1,17 +1,17 @@
 const logger = require("../../utils/loggers");
 const { Users } = require("../mongoose/users");
 const { getFirestore } = require("firebase-admin/firestore");
-const db = getFirestore();
 const moment = require("moment");
 const timestamp = moment().format("lll");
 class ContainerCarritoFirebas {
   constructor(collection) {
     this.collection = collection;
+    this.db = getFirestore();
   }
   //recibo el idDe Usuario
   createOneNewTrolley = async (idMyUsuer) => {
     try {
-      const catchMyUserFb = await db.collection("usuarios").doc(idMyUsuer).get();
+      const catchMyUserFb = await this.db.collection("usuarios").doc(idMyUsuer).get();
       const catchMyUser = catchMyUserFb.data();
       let theTrolley = {
         idUser: idMyUsuer,
@@ -19,12 +19,12 @@ class ContainerCarritoFirebas {
         carrito: [],
         data: timestamp,
       };
-      const newTrolley = await db.collection(this.collection).add(theTrolley);
-      const userModified = await db.collection("usuarios").doc(idMyUsuer).update({ idTrolley: newTrolley.id });
+      const newTrolley = await this.db.collection(this.collection).add(theTrolley);
+      const userModified = await this.db.collection("usuarios").doc(idMyUsuer).update({ idTrolley: newTrolley.id });
       if (userModified) {
         logger.log("info", `Se asigno un nuevo carrito`);
       }
-      let dtaNew = await db.collection(this.collection).doc(newTrolley.id).get(); //me retorna el primer carrito que tenga el idUser
+      let dtaNew = await this.db.collection(this.collection).doc(newTrolley.id).get(); //me retorna el primer carrito que tenga el idUser
       return { _id: dtaNew.id };
     } catch (err) {
       logger.log("error", `errInCreateNewTrolleyFb${err}`);
@@ -32,7 +32,7 @@ class ContainerCarritoFirebas {
   };
   getAllTrolley = async (idTrolley) => {
     try {
-      const datas = await db.collection(this.collection).where("id", "==", idTrolley).get();
+      const datas = await this.db.collection(this.collection).where("id", "==", idTrolley).get();
       let arrayRes = datas.docs.map((item) => {
         return item.data();
       });
@@ -43,13 +43,13 @@ class ContainerCarritoFirebas {
   };
   pushAoneTrolley = async (idUser, catchProduct, cantToPUrch) => {
     try {
-      const catchMyUserFb = await db.collection(this.collection).doc(idUser).get();
+      const catchMyUserFb = await this.db.collection(this.collection).doc(idUser).get();
       const catchMyUser = catchMyUserFb.data();
       const actuallTrolley = catchMyUser.carrito;
       const acumuladorProductos = [];
       catchProduct.cantidad = cantToPUrch;
       acumuladorProductos.push(catchProduct, ...actuallTrolley);
-      let agregar = await db.collection(this.collection).doc(idUser).update({ carrito: acumuladorProductos });
+      let agregar = await this.db.collection(this.collection).doc(idUser).update({ carrito: acumuladorProductos });
       if (agregar) {
         return { msge: "producto Correctamente afregado a carrito" };
       }
@@ -66,7 +66,7 @@ class ContainerCarritoFirebas {
       }
       let indexProductoToMod = arrItems.findIndex((el) => el._id == idProduct);
       arrItems[indexProductoToMod].cantidad = cantActualized;
-      let actualizedAmountItems = await db.collection(this.collection).doc(idTrolley).update({ carrito: arrItems });
+      let actualizedAmountItems = await this.db.collection(this.collection).doc(idTrolley).update({ carrito: arrItems });
       return { msge: "cantidad aumentada" };
     } catch (err) {
       logger.log("error", `errInTrolleyActCantfb${err}`);
@@ -78,7 +78,7 @@ class ContainerCarritoFirebas {
       const act = actT.carrito;
       let trolleyDelete = act.find((el) => el._id == carrito);
       act.splice(trolleyDelete, 1);
-      let agregar = await db.collection(this.collection).doc(actT._id).update({ carrito: act });
+      let agregar = await this.db.collection(this.collection).doc(actT._id).update({ carrito: act });
       if (agregar) {
         return { msge: "producto eliminido de tu carrtio correctamente" };
       }
@@ -88,7 +88,7 @@ class ContainerCarritoFirebas {
   };
   dataOneUser = async (idUsuario) => {
     try {
-      const datas = await db.collection("usuarios").where("id", "==", idUsuario).get();
+      const datas = await this.db.collection("usuarios").where("id", "==", idUsuario).get();
       let arrayRes = datas.docs.map((item) => {
         return { _id: item.id, ...item.data() };
       });
@@ -99,7 +99,7 @@ class ContainerCarritoFirebas {
   };
   dataOneTrolley = async (idUsuario) => {
     try {
-      const datas = await db.collection(this.collection).where("id", "==", idUsuario).get();
+      const datas = await this.db.collection(this.collection).where("id", "==", idUsuario).get();
       let trolley;
       datas.docs.forEach((el) => {
         trolley = { _id: el.id, ...el.data() };
@@ -113,7 +113,7 @@ class ContainerCarritoFirebas {
   static transformTheUser = async (forTrolley, forUser) => {
     try {
       if (forTrolley == null && forUser && typeof forUser === "string") {
-        const datas = await db.collection("usuarios").doc(forUser).get();
+        const datas = await this.db.collection("usuarios").doc(forUser).get();
         return datas.data();
       }
       if (forTrolley == null && forUser) {
@@ -126,7 +126,7 @@ class ContainerCarritoFirebas {
           use = props;
         }
         if (use === undefined) {
-          const datas = await db.collection("usuarios").where("idTrolley", "==", forTrolley).get();
+          const datas = await this.db.collection("usuarios").where("idTrolley", "==", forTrolley).get();
           let trolley;
           datas.docs.forEach((el) => {
             trolley = { ...el.data() };

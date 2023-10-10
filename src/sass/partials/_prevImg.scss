@@ -1,0 +1,26 @@
+#containerPrevImg {
+  text-align: center;
+  #pruebaImg {
+    padding: 11px;
+    @include adaptablePaginaCel {
+      width: 100%;
+    }
+    @include adaptablePaginaTablet {
+      width: 50%;
+    }
+    @include adaptablePagina {
+      width: 25%;
+    }
+  }
+}
+#fileImg {
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(54, 55, 55, 0);
+}
+#fileImg::file-selector-button {
+  margin-right: 10px;
+  border: none;
+  background-color: rgb(54, 55, 55);
+  color: #fefefe;
+}

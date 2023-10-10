@@ -6,15 +6,16 @@
   <body class="text-white">
     <%- include('../partials/navbar'); %>
     <div class="pageFormCreateAccount" class="container-fluid mt-5">
-      <div class="row p-5">
-        <div class="col text-white  text-center">
+      <div class="row p-3">
+        <div class="col text-white text-center">
           <h1>Crea una cuenta</h1>
         </div>
       </div>
       <% if(crearCuentamsg){ %>
       <h1><%=crearCuentamsg%></h1>
       <% } %>
-      <form id="formCreateAccount" method="post" action="/perfil/crearCuenta" enctype="multipart/form-data" class="row p-5">
+      
+      <form id="formCreateAccount" method="post" action="/perfil/crearCuenta" enctype="multipart/form-data" class="row p-5 pt-1">  
         <div class="col-xs-12 col-md-6 col-lg-4">
           <p class="text-white P-2">Ingresa un correo electronico</p>
           <input type="email" name="email" placeholder="Ingresa tu correo " class="w-75 " id="emailNewUser" required />
@@ -29,30 +30,33 @@
         </div>
         <div class="col-xs-12 col-md-6 col-lg-4">
           <p class="text-white P-2">Ingresa tu nombre y primer apellido</p>
-          <input type="text" id="nameNewUser" name="nombre" placeholder="nombre " class="w-75" required  />
+          <input type="text" id="nameNewUser" name="nombre" placeholder="nombre" maxlength="30" class="w-75" required  />
         </div>
         <div class="col-xs-12 col-md-6 col-lg-4">
           <p class="text-white P-2">Ingresa tu edad</p>
-          <input type="number" id="edadNewUser" name="edad" placeholder="Cual es tu edad " class="w-75" required />
+          <input type="number" id="edadNewUser"  name="edad" placeholder="Cual es tu edad" min="1" max="111"  class="w-75" required />
         </div>
 
         <div class="col-xs-12 col-md-6 col-lg-4">
           <p class="text-white P-2">Ingresa tu direccion</p>
-          <input type="text" id="addresNewUser" name="direccion" placeholder="direccion" class="w-75" required />
+          <input type="text" id="addresNewUser" name="direccion" placeholder="direccion" maxlength="35" class="w-75" required />
         </div>
         <div class="col-xs-12 col-md-6 col-lg-4">
           <p class="text-white P-2">Ingresa tu Telefono Celular</p>
-          <input type="number" id="telNewUser" name="telefono" placeholder="telefono" class="w-75" required />
+          <input type="number" id="telNewUser" name="telefono"   placeholder="telefono" class="w-75" required />
         </div>
-        <div class="col-xs-12 col-md-6 col-lg-4">
+        <div class="col-xs-12 col-md-6 col-lg-4" >
           <p class="text-white P-2">Foto de perfil</p>
-          <input type="file" id="fileImg" name="avatar" placeholder="Avatar" class="w-75" required="true"  required/>
+          <input  type="file" id="fileImg" name="avatar" placeholder="Avatar" class="w-75" required="true"  required/>
         </div>
-        <div id="containerButtonCreateAccount" class="col-xs-12 col-md-12 col-lg-12 P-4 mt-5 text-center">
+        <div id="containerPrevImg"  class="col-xs-12 col-md-12 col-lg-12">
+          <img id="pruebaImg"/>
+         </div>
+          <div id="containerButtonCreateAccount" class="col-xs-12 col-md-12 col-lg-12 P-4 mt-2 text-center">
           <button id="buttonCretaAccount" type="submit" value="Crear cuenta" >Crear cuenta </button>
         </div>
       </form>
-      <img id="pruebaImg"/>
+     
     </div>
     <%- include('../partials/footer'); %>
   </body>

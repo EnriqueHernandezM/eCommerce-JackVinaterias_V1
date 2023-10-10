@@ -6,6 +6,7 @@
   },
   "main": "main.js",
   "scripts": {
+    "test": "mocha testProducts.js",
     "start": "node app.js",
     "devMongo": "nodemon app.js 8080 mongo",
     "devMongoJson": "nodemon app.js 8080 mongo resJson",
@@ -18,13 +19,14 @@
     "type": "git",
     "url": "git+https://github.com/EnriqueHernandezM/programacionbackEHM.git"
   },
-  "author": "",
+  "author": "Enrique Hernandez Montiel",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/EnriqueHernandezM/programacionbackEHM/issues"
   },
   "homepage": "https://github.com/EnriqueHernandezM/programacionbackEHM#readme",
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.387.0",
     "autocannon": "^7.10.0",
     "bcrypt": "^5.1.0",
     "compression": "^1.7.4",
@@ -54,7 +56,11 @@
     "winston": "^3.8.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "@faker-js/faker": "^7.6.0",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "nodemon": "^2.0.21",
+    "supertest": "^6.3.3"
   },
   "keywords": [],
   "description": ""

@@ -1,15 +1,16 @@
-const { S3Client, PutObjectComand } = require("@aws-sdk/client-s3");
+const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
 const environmentVars = require("../config/config");
 const fs = require("fs");
 const region = environmentVars.awsRegionBucket;
-const accesKeyId = environmentVars.accesKeyId;
-const secretAccesKey = environmentVars.accesKeySecret;
+const accessKeyId = environmentVars.accesKeyId;
+const secretAccessKey = environmentVars.accesKeySecret;
 const nameOfBucket = environmentVars.awsNameBucket;
+
 const storage = new S3Client({
   region,
   credentials: {
-    accesKeyId,
-    secretAccesKey,
+    accessKeyId,
+    secretAccessKey,
   },
 });
 const getFileUrl = async (name) => {
@@ -23,9 +24,10 @@ const uploadFile = async (file) => {
     Key: file.name,
     Body: stream,
   };
-  const comand = new PutObjectComand(params);
+  const comand = new PutObjectCommand(params);
+
   await storage.send(comand);
-  const resWithUrl = await getFileUrl(nameOfBucket, file.name);
+  const resWithUrl = await getFileUrl(file.name);
   return resWithUrl;
 };
 

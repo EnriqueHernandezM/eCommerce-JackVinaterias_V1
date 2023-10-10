@@ -1,4 +1,3 @@
-const dataBasForConsole = process.argv[3] || "mongo";
 const logger = require("../../utils/loggers");
 ////Daos Orders
 const OrdersDaoMongo = require("./orders/ordersDaoMongo");
@@ -97,7 +96,10 @@ const instancias = [
     descripcion: "users",
   },
 ];
-
+const dataBasForConsole = process.argv[3] || "mongo";
+if (dataBasForConsole === "firebas") {
+  require("../../utils/databasConecctions/firebas");
+}
 const instancia = instancias.filter((el) => el.id == dataBasForConsole);
 const rutaResult = {
   [instancia[0].descripcion]: instancia[0].nombre,

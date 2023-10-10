@@ -118,7 +118,7 @@
     width: 80vw;
   }
   #cardOneItem {
-    box-shadow: 1px 1px 3px 3px rgb(26, 26, 26);
+    box-shadow: 1px 1px 3px 3px rgb(41, 41, 41);
     border-radius: 10px;
     @include adaptablePaginaCel {
       width: 47%;
@@ -130,7 +130,7 @@
       width: 30%;
     }
     text-align: center;
-
+    margin-bottom: 23px;
     p {
       margin: 6px;
       @include adaptablePaginaCel {
@@ -148,7 +148,7 @@
       }
       @include adaptablePagina {
         width: 55%;
-        height: 12rem;
+        height: 12.15rem;
       }
     }
     .butonsItem {

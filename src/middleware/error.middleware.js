@@ -5,9 +5,15 @@ const notFound = (req, res, next) => {
 };
 
 const errorHandler = (err, req, res, next) => {
+  let dbConected = process.argv[3];
   const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
+  let errRes = "not disp";
+  if (dbConected && dbConected == "mem") {
+    errRes = err;
+  }
   res.status(statusCode).json({
     status: statusCode,
+    err: errRes,
   });
 };
 

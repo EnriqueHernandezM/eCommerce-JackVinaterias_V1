@@ -1,4 +1,5 @@
 const logger = require("../utils/loggers");
+const environmentVars = require("../config/config");
 function checkAuthentication(req, res, next) {
   if (req.isAuthenticated()) {
     next();
@@ -9,10 +10,7 @@ function checkAuthentication(req, res, next) {
 }
 
 function checkAuthenticationAdmin(req, res, next) {
-  ///
-  ///crear enviroment var
-  ///
-  if (req.isAuthenticated() && req.user.email === "quique166sb1@hotmail.com") {
+  if (req.isAuthenticated() && req.user.email === environmentVars.adminActive) {
     next();
   } else {
     switch (req.route.methods.get) {

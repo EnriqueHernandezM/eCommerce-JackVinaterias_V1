@@ -1,16 +1,15 @@
 const logger = require("../../utils/loggers");
-const { getFirestore } = require("firebase-admin/firestore");
-require("../../utils/databasConecctions/firebas");
-const db = getFirestore();
+//const { getFirestore } = require("firebase-admin/firestore");
 const moment = require("moment");
 const timestamp = moment().format("lll");
 class ContainerOrdersFirebas {
-  constructor(collection) {
+  constructor(collection, getFirestore) {
     this.collecton = collection;
+    this.db = getFirestore;
   }
   getAllOrdersExisting = async () => {
     try {
-      const readAll = await db.collection(this.collecton).get();
+      const readAll = await this.db.collection(this.collecton).get();
       let arrayRes = readAll.docs.map((item) => {
         return { _id: item.id, ...item.data() };
       });
@@ -29,7 +28,7 @@ class ContainerOrdersFirebas {
       let total = arrTotalAndCant.reduce((acc, el) => acc + el, 0);
       const ordersToCount = await this.getAllOrdersExisting();
       let counterAcum = ordersToCount.length;
-      const newOrder = await db.collection(this.collection).add({
+      const newOrder = await this.db.collection(this.collection).add({
         creationDate: timestamp,
         order: trolleybuy,
         totalProducts: totalItems,
@@ -40,8 +39,8 @@ class ContainerOrdersFirebas {
         idTrolley: user.idTrolley,
         totalOrder: total,
       });
-      let dtaNew = await db.collection("ordenes").doc(newOrder.id).get();
-      await db
+      let dtaNew = await this.db.collection("ordenes").doc(newOrder.id).get();
+      await this.db
         .collection("carritoscompras")
         .doc(user.idTrolley)
         .delete()

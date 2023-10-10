@@ -3,7 +3,6 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const ContainerAuthentication = require("../../services/authentication");
 const containerAuthentication = new ContainerAuthentication();
-const { Users } = require("../../db/mongoose/users"); //Eliminar cuando aestye el daos
 const bcrypt = require("bcrypt");
 const enviarcorreo = require("../nodemailer");
 const logger = require("../loggers");

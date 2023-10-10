@@ -1,13 +1,13 @@
 const { getFirestore } = require("firebase-admin/firestore");
-const db = getFirestore();
 
 class ContainerMessagesFirebas {
   constructor(collection) {
     this.collection = collection;
+    this.db = getFirestore();
   }
   traerMensajesOredenadoPorFecha = async () => {
     try {
-      const mensajesPorFecha = await db.collection(this.collection).orderBy("time", "asc").get();
+      const mensajesPorFecha = await this.db.collection(this.collection).orderBy("time", "asc").get();
       if (mensajesPorFecha) {
         let arrayRes = mensajesPorFecha.docs.map((item) => {
           return { id: item.id, ...item.data() };
@@ -21,7 +21,7 @@ class ContainerMessagesFirebas {
   guardarNuevoMensaje = async (author1, text1, timestamp) => {
     try {
       let res;
-      res = await db.collection(this.collection).doc().set({
+      res = await this.db.collection(this.collection).doc().set({
         author: author1,
         text: text1,
         time: timestamp,

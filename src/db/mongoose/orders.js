@@ -1,6 +1,5 @@
 const logger = require("../../utils/loggers");
 const { Schema, model } = require("mongoose");
-require("../../utils/databasConecctions/mongoose");
 
 const moment = require("moment");
 const timestamp = moment().format("lll");
@@ -14,7 +13,7 @@ const OredersSchema = new Schema({
   idCustomer: { type: String, require: true },
   numberOrder: { type: Number, require: true },
   totalOrder: { type: Number, require: true },
-  deliverDate: { type: String }, //Por si hacemos funcion programar compra
+  deliverDate: { type: String },
 });
 const Orders = model("ordenes", OredersSchema);
 

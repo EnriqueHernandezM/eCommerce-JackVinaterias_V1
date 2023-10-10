@@ -34,7 +34,6 @@ class ContainerAuthentication {
       if (!+newUser.edad || !+newUser.telefono || chartertsNotAcept.test(newUser.nombre) || chartertsNotAcept.test(newUser.direccion)) {
         return funcRes(new Error("Date invalid"), null);
       }
-
       const resImg = ContainerAuthentication.validateImg(newUser.avatar.avatar || newUser.avatar);
       if (resImg) {
         const newImageUrlToS3 = await uploadFile(newUser.avatar.avatar);
@@ -46,7 +45,7 @@ class ContainerAuthentication {
         return funcRes(null, userAddOk);
       }
     } catch (err) {
-      throw err;
+      return funcRes(new Error("Date invalid"), null);
     }
   }
   static checkPropsUser(propsUser) {

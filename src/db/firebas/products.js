@@ -1,16 +1,15 @@
 const logger = require("../../utils/loggers");
 const { getFirestore } = require("firebase-admin/firestore");
-require("../../utils/databasConecctions/firebas");
-const db = getFirestore();
 
 class ContainerProductFirebas {
   constructor(collection) {
     this.collection = collection;
+    this.db = getFirestore();
   }
   //funciona
   saveNewProduct = async (product, timestamp) => {
     try {
-      const newProduct = await db.collection(this.collection).doc().set({
+      const newProduct = await this.db.collection(this.collection).doc().set({
         codeItem: product.codeItem,
         data: timestamp,
         description: product.description,
@@ -22,7 +21,7 @@ class ContainerProductFirebas {
       });
       if (newProduct) {
         logger.log("info", `new product en firebas`);
-        const datas = await db.collection(this.collection).get();
+        const datas = await this.db.collection(this.collection).get();
         let arrayRes = datas.docs.map((item) => {
           return { _id: item.id, ...item.data() };
         });
@@ -38,7 +37,7 @@ class ContainerProductFirebas {
   //al parcer funcion  proba con postman
   getProductByIdDb = async (idNumber) => {
     try {
-      const datas = await db.collection(this.collection).get();
+      const datas = await this.db.collection(this.collection).get();
       let arrayRes = datas.docs.map((item) => {
         return { _id: item.id, ...item.data() };
       });
@@ -51,7 +50,7 @@ class ContainerProductFirebas {
   //funciona
   getAllitemsDb = async () => {
     try {
-      const products = await db.collection(this.collection).get();
+      const products = await this.db.collection(this.collection).get();
       let arrayRes = products.docs.map((item) => {
         return { _id: item.id, ...item.data() };
       });
@@ -64,7 +63,7 @@ class ContainerProductFirebas {
   //funciona
   deleteOneItemInventory = async (aBorrar) => {
     try {
-      await db
+      await this.db
         .collection(this.collection)
         .doc(aBorrar)
         .delete()
@@ -79,7 +78,7 @@ class ContainerProductFirebas {
   //funciona
   modifyOneElementInventory = async (buscar, body) => {
     try {
-      const usuarioModificado = await db.collection(this.collection).doc(buscar._id).set(
+      const usuarioModificado = await this.db.collection(this.collection).doc(buscar._id).set(
         {
           product: body.product,
           typeOfLiquor: body.typeOfLiquor,

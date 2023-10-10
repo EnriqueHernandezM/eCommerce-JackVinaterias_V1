@@ -31,14 +31,17 @@ class InitServer {
     this.initSocket();
   }
   initDbs() {
-    ////////////////
-    ////////
-    ///
-    /* aqui conectamos con mongo y firebas paraleo ya que al tener un solo passport 
-necesitamos crear usuario en paralelo para su registro 
-ya que cambiemos passport conectar por env var*/
-    require("./utils/databasConecctions/mongoose");
-    require("./utils/databasConecctions/firebas");
+    const dataBasForConsole = process.argv[3] || "mongo";
+    switch (dataBasForConsole) {
+      case "mongo":
+        require("./utils/databasConecctions/mongoose");
+        break;
+      case "firebas":
+        require("./utils/databasConecctions/firebas");
+        break;
+      default:
+        break;
+    }
   }
   auth() {
     require("./utils/passport/local-auth");
@@ -74,6 +77,7 @@ ya que cambiemos passport conectar por env var*/
     this.app.get("*", failRoute);
   }
   engineEjs() {
+    this.app.set("views", "src/views");
     this.app.set("view engine", "ejs");
   }
   initSocket() {

@@ -1,6 +1,6 @@
 const logger = require("../loggers");
-const admin = require("firebase-admin");
 const serviceAccount = require("../../../privi.json");
+const admin = require("firebase-admin");
 
 class DatabaseFirebas {
   static instance = null;
@@ -10,7 +10,7 @@ class DatabaseFirebas {
     });
     logger.log("info", "✅ DB firebass on!");
   }
-  static getInstance() {
+  static async getInstance() {
     if (!DatabaseFirebas.instance) {
       DatabaseFirebas.instance = new DatabaseFirebas();
     }

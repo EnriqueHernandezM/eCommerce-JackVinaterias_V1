@@ -280,9 +280,10 @@ form .containerBtonChat .bEnv::before {
   }
 }
 #interfaceRenderItems #cardOneItem {
-  box-shadow: 1px 1px 3px 3px rgb(26, 26, 26);
+  box-shadow: 1px 1px 3px 3px rgb(41, 41, 41);
   border-radius: 10px;
   text-align: center;
+  margin-bottom: 23px;
 }
 @media screen and (min-width: 360px) {
   #interfaceRenderItems #cardOneItem {
@@ -324,7 +325,7 @@ form .containerBtonChat .bEnv::before {
 @media screen and (min-width: 992px) {
   #interfaceRenderItems #cardOneItem img {
     width: 55%;
-    height: 12rem;
+    height: 12.15rem;
   }
 }
 #interfaceRenderItems #cardOneItem .butonsItem {
@@ -608,7 +609,6 @@ form .containerBtonChat .bEnv::before {
   padding-left: 7px;
 }
 #formLogin .containerButtonLoggin .butonLogin {
-  margin: auto;
   position: relative;
   border: none;
   border-radius: 9px;
@@ -670,6 +670,41 @@ form .containerBtonChat .bEnv::before {
   border-radius: 10px;
   filter: blur(5px);
   animation: glow 20s linear infinite;
+}
+
+#containerPrevImg {
+  text-align: center;
+}
+#containerPrevImg #pruebaImg {
+  padding: 11px;
+}
+@media screen and (min-width: 360px) {
+  #containerPrevImg #pruebaImg {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 576px) {
+  #containerPrevImg #pruebaImg {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 992px) {
+  #containerPrevImg #pruebaImg {
+    width: 25%;
+  }
+}
+
+#fileImg {
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(54, 55, 55, 0);
+}
+
+#fileImg::file-selector-button {
+  margin-right: 10px;
+  border: none;
+  background-color: rgb(54, 55, 55);
+  color: #fefefe;
 }
 
 #footer {

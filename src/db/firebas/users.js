@@ -1,13 +1,13 @@
 const logger = require("../../utils/loggers");
 const { getFirestore } = require("firebase-admin/firestore");
-const db = getFirestore();
 class ContainerUsersFirebas {
   constructor(collection) {
     this.collection = collection;
+    this.db = getFirestore();
   }
   getOneUserForEmailDb = async (email) => {
     try {
-      const datas = await db.collection(this.collection).where("email", "==", email).limit(1).get();
+      const datas = await this.db.collection(this.collection).where("email", "==", email).limit(1).get();
       const oneUser = datas.docs.map((el) => {
         return { _id: el.id, ...el.data() };
       });
@@ -18,7 +18,7 @@ class ContainerUsersFirebas {
   };
   getOneUserForIdDb = async (id) => {
     try {
-      const datas = await db.collection(this.collection).doc(id).get();
+      const datas = await this.db.collection(this.collection).doc(id).get();
       return { _id: datas.id, ...datas.data() };
     } catch (err) {
       throw err;
@@ -26,7 +26,7 @@ class ContainerUsersFirebas {
   };
   createNewUserDb = async (addUser) => {
     try {
-      await db.collection(this.collection).doc().set(addUser);
+      await this.db.collection(this.collection).doc().set(addUser);
       return await this.getOneUserForEmailDb(addUser.email);
     } catch (err) {
       throw err;
