@@ -74,7 +74,6 @@ passport.use(
           }
           logger.log("info", "User Registration succesful");
           enviarcorreo(mailOptions);
-          createUserParallel(newUser); //esta se eliminara cuando este listo el Daos
           return done(null, userWithId);
         });
       });
